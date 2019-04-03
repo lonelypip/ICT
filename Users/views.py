@@ -12,7 +12,7 @@ def redirect_view(request):
 def profile(request):
    img_profile = ProfileImage(instance=request.user.profile)
    update_user = UserUpdateForm(instance=request.user)
-
+   print('test for git')
    if request.method == "POST":
       img_profile = ProfileImage(request.POST, request.FILES, instance=request.user.profile)
       update_user = UserUpdateForm(request.POST, instance=request.user)
