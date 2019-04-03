@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Авторизация{% endblock title %}
+{% block title %}{{ user.get_full_name }}{% endblock title %}
 
 {% block content %}
    <div class="news-header" style="background: url('/media/img/news_background.jpg');">
@@ -39,29 +39,36 @@
       <h1>Profile</h1>
    </div>
    <div class="wrapper">
-      <div>
-         {% if messages %}
-            {% for mess in messages %}
-               <div>
-                  {{ mess }}
+      <div class="profile-wrapper">
+         <div class="profile">
+            {% if messages %}
+               {% for mess in messages %}
+                  <div>
+                     {{ mess }}
+                  </div>
+               {% endfor %}
+            {% endif %}
+            <h2>Личный кабинет</h2>
+            <div class="user-area">
+               <div class="user-img">
+                     <img src="{{ user.profile.img.url }}" alt="" style="width: 65px;height:65px;border-radius: 50%;">
                </div>
-            {% endfor %}
-         {% endif %}
-
-         <h3>Личный кабинет</h3>
-         <p>{{ user.username }}</p>
-         <p>{{ user.first_name }} {{ user.last_name }}</p>
-         <p>{{ user.email }}</p>
-         <img src="{{ user.profile.img.url }}" alt="" style="width: 65px;height:65px;">
-      </div>
-      <div style="padding-top: 50px;">
-         <h2>Изменение данных</h2>
-         <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ update_user.as_p }}
-            {{ img_profile.as_p }}
-            <button type="submit">Изменить</button>
-         </form>
+               <div class="user-info">
+                  <p><strong> @{{ user.username }}</strong></p>
+                  <p><strong> {{ user.first_name }} {{ user.last_name }}</strong></p>
+                  <p><strong> {{ user.email }}</strong></p>
+               </div>
+            </div>
+         </div>
+         <div style="padding-top: 50px;" class="profile">
+            <h2>Изменение данных</h2>
+            <form method="POST" enctype="multipart/form-data">
+               {% csrf_token %}
+               {{ update_user.as_p }}
+               {{ img_profile.as_p }}
+               <button type="submit">Изменить</button>
+            </form>
+         </div>
       </div>
    </div>
 {% endblock content %}

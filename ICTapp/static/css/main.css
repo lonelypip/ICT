@@ -908,15 +908,23 @@ footer .section-title {
 }
 
 .add-comment__field,
+#id_username,
+#id_email,
 .add-comment-form textarea,
 .add-comment-form button {
    width: 100%;
-   margin-bottom: 17px;
    display: block;
    background: #F8F4F4;
    border: none;
    padding: 12px 25px;
    font-weight: 600;
+}
+
+.add-comment__field,
+#id_email,
+.add-comment-form textarea,
+.add-comment-form button {
+   margin-bottom: 17px;;
 }
 
 .add-comment-form textarea:focus,
@@ -930,7 +938,8 @@ footer .section-title {
    resize: vertical;
 }
 
-.add-comment-form button {
+.add-comment-form button,
+.profile button {
    margin-bottom: 0;
    background: #ffb606;
    color: #fff;
@@ -943,7 +952,65 @@ footer .section-title {
    transition: all 0.3s;
 }
 
-.add-comment-form button:hover {
+.add-comment-form button:hover,
+.profile button:hover {
    -webkit-box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
            box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+}
+
+.profile-wrapper {
+   display: block;
+   width: 80%;
+   margin: 0 auto;
+   padding: 35px;
+   border: 1px solid silver;
+   margin-bottom: 45px;
+   margin-top: 45px;
+}
+
+.profile {
+   font-family: 'Open Sans', sans-serif;
+}
+
+
+.profile button {
+   width: 100%;
+   border: none;
+}
+
+.profile h2 {
+   text-align: center;
+   margin-bottom: 50px;
+}
+
+.profile:last-child p {
+   padding-bottom: 30px;
+}
+
+.profile label {
+   display: block;
+   margin-bottom: 11px;
+   font-size: 14px;
+   font-weight: 600;
+   font-family: 'Open Sans', sans-serif;
+   text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+
+.profile .helptext {
+   font-size: 13px;
+   color: #6c757d;
+   font-weight: 600;
+   font-family: 'Open Sans', sans-serif;
+   text-shadow: rgba(0,0,0,.01) 0 0 1px;
+   padding-bottom: 7px;
+}
+
+
+.user-area {
+   display: flex;
+}
+
+.user-info {
+   display: block;
+   padding-left: 19px;
 }
