@@ -1,0 +1,376 @@
+{% extends 'base.html' %}
+{% block title %}Факультет - ИКТ. Университет им.Шакарима{% endblock title %}
+
+{% block content %}
+   <header style="background: url('media/img/slider_background.jpg');">
+      <nav>
+         <div class="logo">
+            <h4>ICT</h4>
+         </div>
+
+         <ul class="menu">
+            <li class="menu_item">
+               <a href="{% url 'home_url' %}" class="menu_link">Главная</a>
+            </li>
+            <li class="menu_item">
+               <a href="#services" class="menu_link go_to">Services</a>
+            </li>
+            <li class="menu_item">
+               <a href="#about-us" class="menu_link go_to">About us</a>
+            </li>
+            <li class="menu_item">
+               <a href="{% url 'news_url' %}" class="menu_link">News</a>
+            </li>
+            <li class="menu_item">
+               <a href="#location" class="menu_link go_to">Location</a>
+            </li>
+            <li class="menu_item">
+               <a href="#" class="menu_link">Contacts</a>
+            </li>
+         </ul>
+         <div class="phone_number">
+            <div>
+               <img src="/media/img/phone-call.svg" alt="img">
+            </div>
+            <p> +7 775 666 1717</p>
+         </div>
+      </nav>
+
+      <div class="principal">
+         <h1>Website</h1>
+         <p>Lorem ipsum dolor sit amet consectetur.</p>
+      </div>
+
+      <div class="links">
+         <a href="#" class="links-box">
+            <div class="links_item">
+               <div class="links_icon">
+                  <img src="/media/img/earth-globe.svg" /alt="earth-globe">
+               </div>
+               <div class="links_text">
+                  <p class="links-title">Специальности</p>
+                  <p class="view-more">View more</p>
+               </div>
+            </div>
+         </a>
+
+         <a href="#" class="links-box">
+            <div class="links_item">
+               <div class="links_icon">
+                  <img src="/media/img/books.svg" alt="books">
+               </div>
+               <div class="links_text">
+                  <p class="links-title">Студентческая жизнь</p>
+                  <p class="view-more">View more</p>
+               </div>
+            </div>
+         </a>
+
+         <a href="#" class="links-box">
+            <div class="links_item">
+               <div class="links_icon">
+                  <img src="/media/img/professor.svg" alt="professor">
+               </div>
+               <div class="links_text">
+                  <p class="links-title">Преподаватели</p>
+                  <p class="view-more">View more</p>
+               </div>
+            </div>
+         </a>
+      </div>
+   </header>
+
+   <section id="talents" class="talents">
+      <div class="wrapper">
+         <h2 class="section-title talents-title">Popular Courses</h2>
+
+         <div class="talents-box">
+            <div class="talents-box__item">
+               <div class="talents-box__img">
+                  <img src="media/img/course_1.jpg" alt="talent">
+               </div>
+
+               <div class="talents-box__text">
+                  <div class="text-title talents-box__title">A complete guide to design</div>
+                  <div class="text-desc talents-box__desc">Adobe Guide, Layes, Smart Objects etc...</div>
+               </div>
+
+               <div class="talents-box__author">
+                  <div class="talents-box__avatar">
+                     <img src="media/img/author.jpg" alt="">
+                  </div>
+
+                  <p class="talents-box__name">Michael Smith, <span>Author</span></p>
+               </div>
+            </div>
+
+            <div class="talents-box__item">
+               <div class="talents-box__img">
+                  <img src="/media/img/course_2.jpg" alt="talent">
+               </div>
+
+               <div class="talents-box__text">
+                  <div class="text-title talents-box__title">A complete guide to design</div>
+                  <div class="text-desc talents-box__desc">Adobe Guide, Layes, Smart Objects etc...</div>
+               </div>
+
+               <div class="talents-box__author">
+                  <div class="talents-box__avatar">
+                     <img src="/media/img/author.jpg" alt="">
+                  </div>
+
+                  <p class="talents-box__name">Michael Smith, <span>Author</span></p>
+               </div>
+            </div>
+
+            <div class="talents-box__item">
+               <div class="talents-box__img">
+                  <img src="/media/img/course_3.jpg" alt="talent">
+               </div>
+
+               <div class="talents-box__text">
+                  <div class="text-title talents-box__title">A complete guide to design</div>
+                  <div class="text-desc talents-box__desc">Adobe Guide, Layes, Smart Objects etc...</div>
+               </div>
+
+               <div class="talents-box__author">
+                  <div class="talents-box__avatar">
+                     <img src="media/img/author.jpg" alt="">
+                  </div>
+
+                  <p class="talents-box__name">Michael Smith, <span>Author</span></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section id="register" class="register">
+      <div class="register-info">
+         <div class="register-wrap">
+            <h2 class="register-title">
+               Register now and get a discount <span>50%</span> discount until 1 January
+            </h2>
+
+            <p class="register-desc">
+               In aliquam, augue a gravida rutrum,
+               ante nisl fermentum nulla, vitae
+               tempor nisl ligula vel nunc. Proin
+               quis mi malesuada, finibus tortor
+               fermentum. Aliquam, augue a gravida
+               rutrum, ante nisl fermentum nulla,
+               vitae tempo.
+            </p>
+
+            <button class="register-submit">Register now</button>
+         </div>
+      </div>
+
+      <div class="register-form" style="background: url('media/img/search_background.jpg');">
+         <div class="register-wrap">
+            <h2 class="register-title">Search for your course</h2>
+
+            <form>
+               <input class="register-form-input" type="text" placeholder="Course Name">
+               <input class="register-form-input" type="text" placeholder="Category">
+               <input class="register-form-input" type="text" placeholder="Degree">
+
+               <button class="register-submit">Search course</button>
+            </form>
+         </div>
+      </div>
+   </section>
+
+   <section id="services" class="services">
+      <div class="wrapper">
+         <h2 class="section-title">Our Services</h2>
+
+         <div class="services-box">
+            <div class="services-box__item">
+               <div class="services-box__icon">
+                  <img src="/media/img/earth-globe.svg" alt="envelope">
+               </div>
+
+               <h2 class="text-title services-box__title">Online Courses</h2>
+
+               <p class="text-desc services-box__desc">
+                  In aliquam, augue a gravida rutrum,
+                  ante nisl fermentum nulla, vitae
+                  tempor nisl ligula vel nunc. Proin
+                  quis mi malesuada, finibus tortor fermentum.
+               </p>
+            </div>
+
+            <div class="services-box__item">
+               <div class="services-box__icon">
+                  <img src="/media/img/exam.svg" alt="envelope">
+               </div>
+
+               <h2 class="text-title services-box__title">Indoor Courses</h2>
+
+               <p class="text-desc services-box__desc">
+                  In aliquam, augue a gravida rutrum,/
+                  ante nisl fermentum nulla, vitae
+                  tempor nisl ligula vel nunc. Proin
+                  quis mi malesuada, finibus tortor fermentum.
+               </p>
+            </div>
+
+            <div class="services-box__item">
+               <div class="services-box__icon">
+                  <img src="/media/img/books.svg" alt="envelope">
+               </div>
+
+               <h2 class="text-title services-box__title">Amazing Library</h2>
+
+               <p class="text-desc services-box__desc">
+                  In aliquam, augue a gravida rutrum,
+                  ante nisl fermentum nulla, vitae
+                  tempor nisl ligula vel nunc. Proin
+                  quis mi malesuada, finibus tortor fermentum.
+               </p>
+            </div>
+
+            <div class="services-box__item">
+               <div class="services-box__icon">
+                  <img src="/media/img/professor.svg" alt="envelope">
+               </div>
+
+               <h2 class="text-title services-box__title">Exceptional Professors</h2>
+
+               <p class="text-desc services-box__desc">
+                  In aliquam, augue a gravida rutrum,
+                  ante nisl fermentum nulla, vitae
+                  tempor nisl ligula vel nunc. Proin
+                  quis mi malesuada, finibus tortor fermentum.
+               </p>
+            </div>
+
+            <div class="services-box__item">
+               <div class="services-box__icon">
+                  <img src="/media/img/blackboard.svg" alt="envelope">
+               </div>
+
+               <h2 class="text-title services-box__title">Top Programs</h2>
+
+               <p class="text-desc services-box__desc">
+                  In aliquam, augue a gravida rutrum,
+                  ante nisl fermentum nulla, vitae
+                  tempor nisl ligula vel nunc. Proin
+                  quis mi malesuada, finibus tortor fermentum.
+               </p>
+            </div>
+
+            <div class="services-box__item">
+               <div class="services-box__icon">
+                  <img src="/media/img/mortarboard.svg" alt="envelope">
+               </div>
+
+               <h2 class="text-title services-box__title">Graduate Diploma</h2>
+
+               <p class="text-desc services-box__desc">
+                  In aliquam, augue a gravida rutrum,
+                  ante nisl fermentum nulla, vitae
+                  tempor nisl ligula vel nunc. Proin
+                  quis mi malesuada, finibus tortor fermentum.
+               </p>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section id="testimonials" class="testimonials" style="background: url('media/img/testimonials_background_2.jpg');">
+      <div class="wrapper">
+         <h2 class="section-title testimonials-title">What our students say</h2>
+
+         <div class="testimonials-quote">“</div>
+
+         <p class="testimonials-text">
+            In aliquam, augue a gravida rutrum,
+            ante nisl fermentum nulla, vitae
+            tempor nisl ligula vel nunc. Proin
+            quis mi malesuada, finibus tortor
+            fermentum.In aliquam, augue a gravida
+            rutrum, ante nisl fermentum nulla,
+            vitae tempor nisl ligula vel nunc.
+            Proin quis mi malesuada, finibus tortor fermentum.
+         </p>
+
+         <div class="testimonial-user">
+            <div class="testimonial-img">
+               <img src="/media/img/testimonials_user.jpg" alt="user">
+            </div>
+            <p class="testimonial-name">james cooper</p>
+            <p class="testimonial-title">Graduate Student</p>
+         </div>
+      </div>
+   </section>
+
+   <section id="events" class="events">
+      <div class="wrapper">
+         <h2 class="section-title">Upcoming Events</h2>
+
+         <div class="events-box">
+            <div class="events-box__item">
+               <p class="events-box__date">07 <span>January</span></p>
+
+               <div class="events-box__text">
+                  <h3 class="text-title events-box__title">
+                     <a href="#">Students Festival</a>
+                  </h3>
+                  <p class="text-title events-box__location">Grand Central Park</p>
+                  <p class="text-desc">
+                     In aliquam, augue a gravida rutrum, ante nisl
+                     fermentum nulla, vitae tempor nisl ligula vel
+                     nunc. Proin quis mi malesuada, finibus tortor.
+                  </p>
+               </div>
+
+               <div class="events-box__img">
+                  <img src="media/img/event_1.jpg" alt="news">
+               </div>
+            </div>
+
+            <div class="events-box__item">
+               <p class="events-box__date">07 <span>January</span></p>
+
+               <div class="events-box__text">
+                  <h3 class="text-title events-box__title">
+                     <a href="#">Open day in the Univesrsity campus</a>
+                  </h3>
+                  <p class="text-title events-box__location">Grand Central Park</p>
+                  <p class="text-desc">
+                     In aliquam, augue a gravida rutrum, ante nisl
+                     fermentum nulla, vitae tempor nisl ligula vel
+                     nunc. Proin quis mi malesuada, finibus tortor.
+                  </p>
+               </div>
+
+               <div class="events-box__img">
+                  <img src="media/img/event_2.jpg" alt="news">
+               </div>
+            </div>
+
+            <div class="events-box__item">
+               <p class="events-box__date">07 <span>January</span></p>
+
+               <div class="events-box__text">
+                  <h3 class="text-title events-box__title">
+                     <a href="#">Student Graduation Ceremony</a>
+                  </h3>
+                  <p class="text-title events-box__location">Grand Central Park</p>
+                  <p class="text-desc">
+                     In aliquam, augue a gravida rutrum, ante nisl
+                     fermentum nulla, vitae tempor nisl ligula vel
+                     nunc. Proin quis mi malesuada, finibus tortor.
+                  </p>
+               </div>
+
+               <div class="events-box__img">
+                  <img src="media/img/event_3.jpg" alt="news">
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+{% endblock content %}

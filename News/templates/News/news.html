@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block links %}
+   <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}">
+   <script src="{% static 'js/uikit.min.js' %}"></script>
+{% endblock %}
+{% block title %}ICT - News{% endblock %}
+
+{% block content %}
+   <div class="news-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/news-bg.jpg">
+      <nav>
+         <div class="logo">
+            <h4>ICT</h4>
+         </div>
+
+         <ul class="menu">
+            <li class="menu_item">
+               <a href="{% url 'home_url' %}" class="menu_link">Главная</a>
+            </li>
+            <li class="menu_item">
+               <a href="#services" class="menu_link go_to">Services</a>
+            </li>
+            <li class="menu_item">
+               <a href="#about-us" class="menu_link go_to">About us</a>
+            </li>
+            <li class="menu_item">
+               <a href="{% url 'news_url' %}" class="menu_link">News</a>
+            </li>
+            <li class="menu_item">
+               <a href="#location" class="menu_link go_to">Location</a>
+            </li>
+            <li class="menu_item">
+               <a href="#" class="menu_link">Contacts</a>
+            </li>
+         </ul>
+         <div class="phone_number">
+            <div>
+               <img src="/media/img/phone-call.svg" alt="img">
+            </div>
+            <p> +7 775 666 1717</p>
+         </div>
+      </nav>
+      
+      <h1>The News</h1>
+   </div>
+
+   <section id="news-section" class="news-section">
+      <div class="wrapper news-wrap">
+         <div class="news-box">
+            {% for post in posts %}
+               <div class="news-box__item">
+                  {% if post.img %}
+                     <div class="news-box__img">
+                        <img src="{{ post.img.url }}" alt="news">
+                     </div>
+                  {% endif %}
+                  <div class="news-box__container">
+                     <p class="news-box__date">{{ post.date|date:"d "}} <span>{{ post.date|date:"M"}}</span></p>
+
+                     <div class="news-box__title">
+                        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                        <img src="{{ post.author.profile.img.url }}" alt="" style="width: 65px; height: 65px; border-radius: 50%;">
+                        <p class="news-box__author">Автор: {{ post.author.last_name }} {{ post.author.first_name }}| 3 Comments</p>
+                     </div>
+                  </div>
+
+                  <p class="text-desc news-box__desc">
+                     {{ post.text|striptags|truncatechars:400 }}
+                  </p>
+
+                  <a class="news-box__more" href="{{ post.get_absolute_url }}">Читать далее</a>
+               </div>
+            {% endfor %}
+         </div>
+
+         <div class="news-more">
+            <h3 class="text-title news-more__title">Latest Posts</h3>
+
+            <div class="news-more-box">
+               <div class="news-more__item">
+                  <div class="news-more__img">
+                     <img src="/media/img/latest_1.jpg" alt="news">
+                  </div>
+
+                  <a class="news-more__link" href="new-post.html">
+                     Why do you need a qualification?
+                  </a>
+                  
+                  <p class="news-more__author">By Christian Smith <span>|</span> 3 Comments</p>
+               </div>
+
+               <div class="news-more__item">
+                  <div class="news-more__img">
+                     <img src="/media/img/latest_2.jpg" alt="news">
+                  </div>
+
+                  <a class="news-more__link" href="new-post.html">
+                     Why do you need a qualification?
+                  </a>
+                  
+                  <p class="news-more__author">By Christian Smith <span>|</span> 3 Comments</p>
+               </div>
+
+               <div class="news-more__item">
+                  <div class="news-more__img">
+                     <img src="/media/img/latest_3.jpg" alt="news">
+                  </div>
+
+                  <a class="news-more__link" href="new-post.html">
+                     Why do you need a qualification?
+                  </a>
+                  
+                  <p class="news-more__author">By Christian Smith <span>|</span> 3 Comments</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+{% endblock content %}

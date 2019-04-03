@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% block links %}
+   <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}">
+   <script src="{% static 'js/uikit.min.js' %}"></script>
+{% endblock %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+   <div class="news-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/news-bg.jpg">
+      <nav>
+         <div class="logo">
+            <h4>ICT</h4>
+         </div>
+
+         <ul class="menu">
+            <li class="menu_item">
+               <a href="{% url 'home_url' %}" class="menu_link">Главная</a>
+            </li>
+            <li class="menu_item">
+               <a href="#services" class="menu_link go_to">Services</a>
+            </li>
+            <li class="menu_item">
+               <a href="#about-us" class="menu_link go_to">About us</a>
+            </li>
+            <li class="menu_item">
+               <a href="{% url 'news_url' %}" class="menu_link">News</a>
+            </li>
+            <li class="menu_item">
+               <a href="#location" class="menu_link go_to">Location</a>
+            </li>
+            <li class="menu_item">
+               <a href="#" class="menu_link">Contacts</a>
+            </li>
+         </ul>
+         <div class="phone_number">
+            <div>
+               <img src="/media/img/phone-call.svg" alt="img">
+            </div>
+            <p> +7 775 666 1717</p>
+         </div>
+      </nav>
+      
+      <h1>The News</h1>
+   </div>
+
+   <section id="news-section" class="news-section">
+      <div class="wrapper news-wrap">
+         <div class="news-box">
+            <div class="news-box__item">
+               {% if post.img %}
+                  <div class="news-box__img">
+                     <img src="{{ post.img.url }}" alt="news">
+                  </div>
+               {% endif %}
+               <div class="news-box__container">
+                  <p class="news-box__date">{{ post.date|date:"d "}} <span>{{ post.date|date:"M"}}</span></p>
+ 
+                  <div class="news-box__title">
+                     <a>{{ post.title }}</a>
+                     <img src="{{ post.author.profile.img.url }}" alt="" style="width: 65px; height: 65px; border-radius: 50%;">
+                     <p class="news-box__author">Автор: {{ post.author.last_name }} {{ post.author.first_name }}| 3 Comments</p>
+                  </div>
+                  {% if post.author == user %}
+                     <hr>
+                     <a href="{% url 'news_update_url' post.id %}" class="btn btn-info">Обнавить пост</a>
+                     <a href="{% url 'news_delete_url' post.id %}" class="btn btn-danger">Удалить пост</a>
+                  {% endif %}
+               </div>
+
+               <p class="text-desc news-box__desc news-desc-margin-b">{{ post.text|safe }}</p>
+                             
+               <!-- <p class="news-detail__quote">
+                  Etiam eu purus nec eros varius luctus. Praesent finibus risus 
+                  facilisis ultricies venena tis. Suspendisse fermentum sodales 
+                  lacus, lacinia gravida elit.
+               </p>
+
+               <p class="text-desc news-box__desc news-desc-margin-t">
+                  In aliquam, augue a gravida rutrum, ante nisl fermentum nulla,
+                  vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, 
+                  finibus tortor fermentum. Etiam eu purus nec eros varius luctus. 
+                  Praesent finibus risus facilisis ultricies. Etiam eu purus nec 
+                  eros varius luctus. Praesent finibus risus facilisis ultricies 
+                  venenatis. Suspendisse fermentum sodales lacus, lacinia gravida 
+                  elit dapibus sed. Cras in lectus elit. Maecenas tempus nunc vitae 
+                  mi egestas venenatis. Aliquam rhoncus, purus in vehicula porttitor, 
+                  lacus ante consequat purus, id elementum enim purus nec enim. 
+                  In sed odio rhoncus, tristique ipsum id, pharetra neque.
+               </p> -->
+
+               <h3 class="text-title news-detail__comment">Comments</h3>
+
+               <div class="news-comment-box">
+                  <div class="news-comment-box__item">
+                     <div class="news-comment-box__ava">
+                        <img src="/media/img/comment_1.jpg" alt="">
+                     </div>
+
+                     <div>
+                        <p class="news-comment-box__author">Mark Smith | Dec 18, 2017 | <span>Reply</span></p>
+
+                        <p class="text-desc news-comment-box__text">
+                           Aliquam rhoncus, purus in vehicula porttitor, 
+                           lacus ante consequat purus, id elementum enim 
+                           purus nec enim. In sed odio rhoncus, tristique 
+                           ipsum id, pharetra neque.
+                        </p>
+                     </div>
+                  </div>
+
+                  <div class="news-comment-box__item">
+                     <div class="news-comment-box__ava">
+                        <img src="/media/img/comment_2.jpg" alt="">
+                     </div>
+
+                     <div>
+                        <p class="news-comment-box__author">Mark Smith | Dec 18, 2017 | <span>Reply</span></p>
+
+                        <p class="text-desc news-comment-box__text">
+                           Aliquam rhoncus, purus in vehicula porttitor, 
+                           lacus ante consequat purus, id elementum enim 
+                           purus nec enim. In sed odio rhoncus, tristique 
+                           ipsum id, pharetra neque.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+
+               <h3 class="text-title news-detail__comment">Leave a comment</h3>
+
+               <div class="add-comment-form">
+                  <form>
+                     <input class="add-comment__field" type="text" placeholder="Name">
+                     <input class="add-comment__field" type="email" placeholder="E-mail">
+                     <textarea class="add-comment__message" placeholder="Message"></textarea>
+                     <button>Send Message</button>
+                  </form>
+               </div>
+            </div>
+         </div>
+
+         <div class="news-more">
+            <h3 class="text-title news-more__title">Latest Posts</h3>
+
+            <div class="news-more-box">
+               <div class="news-more__item">
+                  <div class="news-more__img">
+                     <img src="/media/img/latest_1.jpg" alt="news">
+                  </div>
+
+                  <a class="news-more__link" href="new-post.html">
+                     Why do you need a qualification?
+                  </a>
+                  
+                  <p class="news-more__author">By Christian Smith <span>|</span> 3 Comments</p>
+               </div>
+
+               <div class="news-more__item">
+                  <div class="news-more__img">
+                     <img src="/media/img/latest_2.jpg" alt="news">
+                  </div>
+
+                  <a class="news-more__link" href="new-post.html">
+                     Why do you need a qualification?
+                  </a>
+                  
+                  <p class="news-more__author">By Christian Smith <span>|</span> 3 Comments</p>
+               </div>
+
+               <div class="news-more__item">
+                  <div class="news-more__img">
+                     <img src="/media/img/latest_3.jpg" alt="news">
+                  </div>
+
+                  <a class="news-more__link" href="new-post.html">
+                     Why do you need a qualification?
+                  </a>
+                  
+                  <p class="news-more__author">By Christian Smith <span>|</span> 3 Comments</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+{% endblock content %}
