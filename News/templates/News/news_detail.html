@@ -15,22 +15,22 @@
 
          <ul class="menu">
             <li class="menu_item">
-               <a href="{% url 'home_url' %}" class="menu_link">Главная</a>
+               <a href="{% url 'home_url' %}" class="text-decor-none menu_link">Главная</a>
             </li>
             <li class="menu_item">
-               <a href="#services" class="menu_link go_to">Services</a>
+               <a href="#services" class="text-decor-none menu_link go_to">Services</a>
             </li>
             <li class="menu_item">
-               <a href="#about-us" class="menu_link go_to">About us</a>
+               <a href="#about-us" class="text-decor-none menu_link go_to">About us</a>
             </li>
             <li class="menu_item">
-               <a href="{% url 'news_url' %}" class="menu_link">News</a>
+               <a href="{% url 'news_url' %}" class="text-decor-none menu_link">News</a>
             </li>
             <li class="menu_item">
-               <a href="#location" class="menu_link go_to">Location</a>
+               <a href="#location" class="text-decor-none menu_link go_to">Location</a>
             </li>
             <li class="menu_item">
-               <a href="#" class="menu_link">Contacts</a>
+               <a href="#" class="text-decor-none menu_link">Contacts</a>
             </li>
          </ul>
          <div class="phone_number">
@@ -57,8 +57,10 @@
                   <p class="news-box__date">{{ post.date|date:"d "}} <span>{{ post.date|date:"M"}}</span></p>
  
                   <div class="news-box__title">
-                     <a>{{ post.title }}</a>
-                     <img src="{{ post.author.profile.img.url }}" alt="" style="width: 65px; height: 65px; border-radius: 50%;">
+                     <div class="flex j-sb">
+                        <a class="text-decor-none">{{ post.title }}</a>
+                        <img class="author-ava" src="{{ post.author.profile.img.url }}">
+                     </div>
                      <p class="news-box__author">Автор: {{ post.author.last_name }} {{ post.author.first_name }}| 3 Comments</p>
                   </div>
                   {% if post.author == user %}
@@ -149,7 +151,7 @@
                      <img src="/media/img/latest_1.jpg" alt="news">
                   </div>
 
-                  <a class="news-more__link" href="new-post.html">
+                  <a class="text-decor-none news-more__link" href="new-post.html">
                      Why do you need a qualification?
                   </a>
                   
@@ -161,7 +163,7 @@
                      <img src="/media/img/latest_2.jpg" alt="news">
                   </div>
 
-                  <a class="news-more__link" href="new-post.html">
+                  <a class="text-decor-none news-more__link" href="new-post.html">
                      Why do you need a qualification?
                   </a>
                   
@@ -173,7 +175,7 @@
                      <img src="/media/img/latest_3.jpg" alt="news">
                   </div>
 
-                  <a class="news-more__link" href="new-post.html">
+                  <a class="text-decor-none news-more__link" href="new-post.html">
                      Why do you need a qualification?
                   </a>
                   

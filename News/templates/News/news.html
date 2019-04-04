@@ -15,22 +15,22 @@
 
          <ul class="menu">
             <li class="menu_item">
-               <a href="{% url 'home_url' %}" class="menu_link">Главная</a>
+               <a href="{% url 'home_url' %}" class="text-decor-none menu_link">Главная</a>
             </li>
             <li class="menu_item">
-               <a href="#services" class="menu_link go_to">Services</a>
+               <a href="#services" class="text-decor-none menu_link go_to">Services</a>
             </li>
             <li class="menu_item">
-               <a href="#about-us" class="menu_link go_to">About us</a>
+               <a href="#about-us" class="text-decor-none menu_link go_to">About us</a>
             </li>
             <li class="menu_item">
-               <a href="{% url 'news_url' %}" class="menu_link">News</a>
+               <a href="{% url 'news_url' %}" class="text-decor-none menu_link">News</a>
             </li>
             <li class="menu_item">
-               <a href="#location" class="menu_link go_to">Location</a>
+               <a href="#location" class="text-decor-none menu_link go_to">Location</a>
             </li>
             <li class="menu_item">
-               <a href="#" class="menu_link">Contacts</a>
+               <a href="#" class="text-decor-none menu_link">Contacts</a>
             </li>
          </ul>
          <div class="phone_number">
@@ -58,7 +58,7 @@
                      <p class="news-box__date">{{ post.date|date:"d "}} <span>{{ post.date|date:"M"}}</span></p>
 
                      <div class="news-box__title">
-                        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                        <a class="text-decor-none" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                         <img src="{{ post.author.profile.img.url }}" alt="" style="width: 65px; height: 65px; border-radius: 50%;">
                         <p class="news-box__author">Автор: {{ post.author.last_name }} {{ post.author.first_name }}| 3 Comments</p>
                      </div>
@@ -68,13 +68,13 @@
                      {{ post.text|striptags|truncatechars:400 }}
                   </p>
 
-                  <a class="news-box__more" href="{{ post.get_absolute_url }}">Читать далее</a>
+                  <a class="text-decor-none news-box__more" href="{{ post.get_absolute_url }}">Читать далее</a>
                </div>
             {% endfor %}
          </div>
 
          <div class="news-more">
-            <h3 class="text-title news-more__title">Latest Posts</h3>
+            <h3 class="text-title news-more__title">Последние посты</h3>
 
             <div class="news-more-box">
                <div class="news-more__item">
@@ -82,7 +82,7 @@
                      <img src="/media/img/latest_1.jpg" alt="news">
                   </div>
 
-                  <a class="news-more__link" href="new-post.html">
+                  <a class="text-decor-none news-more__link" href="new-post.html">
                      Why do you need a qualification?
                   </a>
                   
@@ -94,14 +94,14 @@
                      <img src="/media/img/latest_2.jpg" alt="news">
                   </div>
 
-                  <a class="news-more__link" href="new-post.html">
+                  <a class="text-decor-none news-more__link" href="new-post.html">
                      Why do you need a qualification?
                   </a>
                   
                   <p class="news-more__author">By Christian Smith <span>|</span> 3 Comments</p>
                </div>
 
-               <div class="news-more__item">
+               <div class="text-decor-none news-more__item">
                   <div class="news-more__img">
                      <img src="/media/img/latest_3.jpg" alt="news">
                   </div>
