@@ -79,6 +79,12 @@
 	text-decoration: underline;
 }
 
+.login-form ul {
+	margin: 0 0 30px;
+	color: tomato;
+	list-style: none;
+}
+
 footer {
 	display: none;
 }
