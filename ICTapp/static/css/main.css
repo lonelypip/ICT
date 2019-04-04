@@ -47,6 +47,10 @@
            align-items: flex-start;
 }
 
+.flex-align-bottom {
+   align-items: flex-end;
+}
+
 /* ------------------------------ Index ------------------------------ */
 
 header {
@@ -762,7 +766,8 @@ footer .section-title {
 }
 
 .socials a:last-child,
-.teachers-box__links a:last-child {
+.teachers-box__links a:last-child,
+.teachers-detail-info__links a:last-child {
    margin-right: 0;
 }
 
@@ -1117,6 +1122,57 @@ footer .section-title {
    padding-left: 19px;
 }
 
+.news-box__container .news-action-button {
+   padding: 0 25.7px;
+   cursor: pointer;
+   outline: none;
+}
+
+.news-box__container .news-action-dropdown {
+   text-align: center;
+   padding: 0;
+}
+
+.news-box__container .news-action-dropdown p {
+   margin: 0;
+}
+
+.news-action-button__link {
+   text-align: center;
+   display: block;
+   padding: 5px;
+   transition: all 0.3s;
+}
+
+.news-action-button__link i {
+   display: inline-block;
+   margin-left: 10px;
+}
+
+.news-action-button__link-edit {
+   background: #F8F4F4;
+   color: #9E7575;
+}
+
+.news-action-button__link-edit:hover {
+   color: #9E7575;
+   background: #e2dede;
+}
+
+.news-action-button__link-edit i {
+   margin-left: 0px;
+}
+
+.news-action-button__link-delete {
+   background: #F0506E;
+   color: #fff;
+}
+
+.news-action-button__link-delete:hover {
+   color: #fff;
+   background: #ce3754;
+}
+
 /* ------------------------------ Teachers ------------------------------ */
 
 .teachers {
@@ -1132,6 +1188,21 @@ footer .section-title {
 .teachers-box__img {
    height: 250px;
    overflow: hidden;
+}
+
+.teachers-box__img:hover .teachers-overlay-link {
+   opacity: 1;
+}
+
+.teachers-overlay-link {
+   display: block;
+   transition: all 0.3s;
+   opacity: 0;
+}
+
+.teachers-overlay-link p {
+   font-size: 17px;
+   color: #fff;
 }
 
 .teachers-box__img img {
@@ -1164,4 +1235,102 @@ footer .section-title {
 
 .teachers-box__links a:hover {
    color: #ffb606;
+}
+
+/* ------------------------------ Teachers Detail ------------------------------ */
+
+.teachers-detail {
+   font-size: 0;
+}
+
+.teachers-detail * {
+   box-sizing: border-box;
+}
+
+.teachers-detail-ava-box {
+   background: #F8F9FB;
+   width: 37%;
+   display: inline-block;
+   vertical-align: top;
+}
+
+.teachers-detail-info-box {
+   width: 63%;
+   font-size: 16px;
+   display: inline-block;
+}
+
+.teachers-detail-ava__img {
+   width: 235px;
+   height: 235px;
+   border-radius: 50%;
+   overflow: hidden;
+   margin: 0 70px 0 auto;
+}
+
+.teachers-detail-ava__img img {
+   width: 100%;
+   min-height: 100%;
+}
+
+.teachers-detail-info-container {
+   max-width: 750px;
+   margin-left: 6.5%;
+}
+
+.teachers-detail-info__name {
+   font-size: 62px;
+   margin: 0 0 40px;
+   font-weight: 300;
+}
+
+.teachers-detail-info__name span {
+   display: block;
+   color: #ffb606;
+   text-transform: uppercase;
+   line-height: 25px;
+   font-weight: 600;
+}
+
+.teachers-detail-info__job-title {
+   margin: 0;
+   font-size: 21px;
+   font-weight: 300;
+}
+
+.teachers-detail-info__links a {
+   background: #EDEDED;
+   width: 38px;
+   padding: 5px 0;
+   font-size: 21px;
+   text-align: center;
+   display: inline-block;
+   margin-right: 8px;
+   color: #c6c6c6;
+   transition: all 0.3s;
+}
+
+.teachers-detail-info__links a:hover {
+   background: #ffb606;
+   color: #fff;
+}
+
+.teachers-detail-info__personal-info {
+   margin-top: 250px;
+   margin-bottom: 50px;
+   padding-top: 20px;
+   border-top: 2px solid #ECECEC;
+}
+
+.teachers-detail-info__personal-info p {
+   font-size: 14px;
+}
+
+.teachers-detail-info__personal-title {
+   font-weight: 600;
+   margin: 0;
+}
+
+.teachers-detail-info__personal-desc {
+   margin: 13px 0 0;
 }

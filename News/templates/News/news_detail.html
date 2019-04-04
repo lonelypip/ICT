@@ -41,7 +41,7 @@
          </div>
       </nav>
       
-      <h1>The News</h1>
+      <h1>Новости</h1>
    </div>
 
    <section id="news-section" class="news-section">
@@ -54,8 +54,27 @@
                   </div>
                {% endif %}
                <div class="news-box__container">
-                  <p class="news-box__date">{{ post.date|date:"d "}} <span>{{ post.date|date:"M"}}</span></p>
- 
+                  <div>
+                     <p class="news-box__date">{{ post.date|date:"d "}} <span>{{ post.date|date:"M"}}</span></p>
+                     {% if post.author == user %}
+                        <div class="uk-inline">
+                           <button class="news-action-button uk-button-small uk-button-default" type="button">Еще</button>
+                           <div class="news-action-dropdown" uk-dropdown="mode: click; pos: top-justify;">
+                              <p>
+                                 <a href="{% url 'news_update_url' post.id %}" class="text-decor-none news-action-button__link news-action-button__link-edit">Редактировать 
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                 </a>
+                              </p>
+                              <p>
+                                 <a href="{% url 'news_delete_url' post.id %}" class="text-decor-none news-action-button__link news-action-button__link-delete">Удалить пост
+                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                 </a>
+                              </p>
+                           </div>
+                        </div>
+                     {% endif %}
+                  </div>
+
                   <div class="news-box__title">
                      <div class="flex j-sb">
                         <a class="text-decor-none">{{ post.title }}</a>
@@ -63,11 +82,6 @@
                      </div>
                      <p class="news-box__author">Автор: {{ post.author.last_name }} {{ post.author.first_name }}| 3 Comments</p>
                   </div>
-                  {% if post.author == user %}
-                     <hr>
-                     <a href="{% url 'news_update_url' post.id %}" class="btn btn-info">Обнавить пост</a>
-                     <a href="{% url 'news_delete_url' post.id %}" class="btn btn-danger">Удалить пост</a>
-                  {% endif %}
                </div>
 
                <p class="text-desc news-box__desc news-desc-margin-b">{{ post.text|safe }}</p>
@@ -143,7 +157,7 @@
          </div>
 
          <div class="news-more">
-            <h3 class="text-title news-more__title">Latest Posts</h3>
+            <h3 class="text-title news-more__title">Последние посты</h3>
 
             <div class="news-more-box">
                <div class="news-more__item">

@@ -41,7 +41,7 @@
          </div>
       </nav>
       
-      <h1>The News</h1>
+      <h1>Новости</h1>
    </div>
 
    <section id="news-section" class="news-section">
@@ -55,7 +55,27 @@
                      </div>
                   {% endif %}
                   <div class="news-box__container">
-                     <p class="news-box__date">{{ post.date|date:"d "}} <span>{{ post.date|date:"M"}}</span></p>
+                     <div>
+                        <p class="news-box__date">{{ post.date|date:"d "}} <span>{{ post.date|date:"M"}}</span></p>
+
+                        {% if post.author == user %}
+                           <div class="uk-inline">
+                              <button class="news-action-button uk-button-small uk-button-default" type="button">Еще</button>
+                              <div class="news-action-dropdown" uk-dropdown="mode: click; pos: top-justify;">
+                                 <p>
+                                    <a href="{% url 'news_update_url' post.id %}" class="text-decor-none news-action-button__link news-action-button__link-edit">Редактировать 
+                                       <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </a>
+                                 </p>
+                                 <p>
+                                    <a href="{% url 'news_delete_url' post.id %}" class="text-decor-none news-action-button__link news-action-button__link-delete">Удалить пост
+                                       <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                    </a>
+                                 </p>
+                              </div>
+                           </div>
+                        {% endif %}
+                     </div>
 
                      <div class="news-box__title">
                         <div class="flex j-sb">
