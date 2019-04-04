@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block links %}
+   <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}">
+   <script src="{% static 'js/uikit.min.js' %}"></script>
+{% endblock %}
 {% block title %}Факультет - ИКТ. Университет им.Шакарима{% endblock title %}
 
 {% block content %}
@@ -42,7 +47,7 @@
       </div>
 
       <div class="links">
-         <a href="#" class="links-box">
+         <a href="#" class="text-decor-none links-box">
             <div class="links_item">
                <div class="links_icon">
                   <img src="/media/img/earth-globe.svg" /alt="earth-globe">
@@ -54,7 +59,7 @@
             </div>
          </a>
 
-         <a href="{% url 'informations_url' %}" class="links-box">
+         <a href="{% url 'informations_url' %}" class="text-decor-none links-box">
             <div class="links_item">
                <div class="links_icon">
                   <img src="/media/img/books.svg" alt="books">
@@ -66,7 +71,7 @@
             </div>
          </a>
 
-         <a href="#" class="links-box">
+         <a href="#" class="text-decor-none links-box">
             <div class="links_item">
                <div class="links_icon">
                   <img src="/media/img/professor.svg" alt="professor">
@@ -148,9 +153,7 @@
    <section id="register" class="register">
       <div class="register-info">
          <div class="register-wrap">
-            <h2 class="register-title">
-               Register now and get a discount <span>50%</span> discount until 1 January
-            </h2>
+            <h2 class="register-title">О нас</h2>
 
             <p class="register-desc">
                In aliquam, augue a gravida rutrum,
@@ -159,31 +162,36 @@
                quis mi malesuada, finibus tortor
                fermentum. Aliquam, augue a gravida
                rutrum, ante nisl fermentum nulla,
-               vitae tempo.
+               vitae tempo ...
             </p>
 
-            <button class="register-submit">Register now</button>
+            <a class="text-decor-none register-submit"href="#">Подробнее</a>
          </div>
       </div>
 
-      <div class="register-form" style="background: url('media/img/search_background.jpg');">
+      <div class="register-form">
          <div class="register-wrap">
-            <h2 class="register-title">Search for your course</h2>
+            <h2 class="register-title">Наша история</h2>
 
-            <form>
-               <input class="register-form-input" type="text" placeholder="Course Name">
-               <input class="register-form-input" type="text" placeholder="Category">
-               <input class="register-form-input" type="text" placeholder="Degree">
+            <p class="register-desc">
+               In aliquam, augue a gravida rutrum,
+               ante nisl fermentum nulla, vitae
+               tempor nisl ligula vel nunc. Proin
+               quis mi malesuada, finibus tortor
+               fermentum. Aliquam, augue a gravida
+               rutrum, ante nisl fermentum nulla,
+               vitae tempo ...
+            </p>
 
-               <button class="register-submit">Search course</button>
-            </form>
+            <a class="text-decor-none register-submit" href="#">Подробнее</a>
+            <<!-- -->>
          </div>
       </div>
    </section>
 
    <section id="services" class="services">
       <div class="wrapper">
-         <h2 class="section-title">Our Services</h2>
+         <h2 class="section-title">Почему мы?</h2>
 
          <div class="services-box">
             <div class="services-box__item">
@@ -279,29 +287,334 @@
       </div>
    </section>
 
-   <section id="testimonials" class="testimonials" style="background: url('media/img/testimonials_background_2.jpg');">
+   <section id="testimonials" class="testimonials">
       <div class="wrapper">
-         <h2 class="section-title testimonials-title">What our students say</h2>
+         <h2 class="section-title testimonials-title">Что наши говорят наши студенты</h2>
+         
+         <div class="slider-review uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="min-height: 300">
+            <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+               <ul class="slider-review-box uk-slideshow-items">
+                  <li class="slider-review__item">
+                     <div class="testimonials-quote">“</div>
 
-         <div class="testimonials-quote">“</div>
+                     <p class="testimonials-text">
+                        In aliquam, augue a gravida rutrum,
+                        ante nisl fermentum nulla, vitae
+                        tempor nisl ligula vel nunc. Proin
+                        quis mi malesuada, finibus tortor
+                        fermentum.In aliquam, augue a gravida
+                        rutrum, ante nisl fermentum nulla,
+                        vitae tempor nisl ligula vel nunc.
+                        Proin quis mi malesuada, finibus tortor fermentum.
+                     </p>
+      
+                     <div class="testimonial-user">
+                        <div class="testimonial-img">
+                           <img src="/media/img/testimonials_user.jpg" alt="ИКТ-отзывы">
+                        </div>
+                        <p class="testimonial-name">james cooper</p>
+                        <p class="testimonial-title">Graduate Student</p>
+                     </div>
+                  </li>
+                  
+                  <li class="slider-review__item">
+                     <div class="testimonials-quote">“</div>
 
-         <p class="testimonials-text">
-            In aliquam, augue a gravida rutrum,
-            ante nisl fermentum nulla, vitae
-            tempor nisl ligula vel nunc. Proin
-            quis mi malesuada, finibus tortor
-            fermentum.In aliquam, augue a gravida
-            rutrum, ante nisl fermentum nulla,
-            vitae tempor nisl ligula vel nunc.
-            Proin quis mi malesuada, finibus tortor fermentum.
-         </p>
+                     <p class="testimonials-text">
+                        In aliquam, augue a gravida rutrum,
+                        ante nisl fermentum nulla, vitae
+                        tempor nisl ligula vel nunc. Proin
+                        quis mi malesuada, finibus tortor
+                        fermentum.In aliquam, augue a gravida
+                        rutrum, ante nisl fermentum nulla,
+                        vitae tempor nisl ligula vel nunc.
+                        Proin quis mi malesuada, finibus tortor fermentum.
+                     </p>
+      
+                     <div class="testimonial-user">
+                        <div class="testimonial-img">
+                           <img src="/media/img/testimonials_user.jpg" alt="ИКТ-отзывы">
+                        </div>
+                        <p class="testimonial-name">james cooper</p>
+                        <p class="testimonial-title">Graduate Student</p>
+                     </div>
+                  </li>
 
-         <div class="testimonial-user">
-            <div class="testimonial-img">
-               <img src="/media/img/testimonials_user.jpg" alt="user">
+                  <li class="slider-review__item">
+                     <div class="testimonials-quote">“</div>
+
+                     <p class="testimonials-text">
+                        In aliquam, augue a gravida rutrum,
+                        ante nisl fermentum nulla, vitae
+                        tempor nisl ligula vel nunc. Proin
+                        quis mi malesuada, finibus tortor
+                        fermentum.In aliquam, augue a gravida
+                        rutrum, ante nisl fermentum nulla,
+                        vitae tempor nisl ligula vel nunc.
+                        Proin quis mi malesuada, finibus tortor fermentum.
+                     </p>
+      
+                     <div class="testimonial-user">
+                        <div class="testimonial-img">
+                           <img src="/media/img/testimonials_user.jpg" alt="ИКТ-отзывы">
+                        </div>
+                        <p class="testimonial-name">james cooper</p>
+                        <p class="testimonial-title">Graduate Student</p>
+                     </div>
+                  </li>
+               </ul>
+
+               <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+               <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
             </div>
-            <p class="testimonial-name">james cooper</p>
-            <p class="testimonial-title">Graduate Student</p>
+
+            <ul class="slider-review-dotnav uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
+         </div>
+      </div>
+   </section>
+
+   <section id="news-slider" class="news-slider">
+      <div>
+         <h2 class="section-title">Новости</h2>
+
+         <div class="news-slider-box uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="clsActivated: uk-transition-active; center: true">
+            <ul class="uk-slider-items uk-grid">
+               <li class="uk-width-1-2">
+                  <div class="uk-panel">
+                     <img src="https://getuikit.com/docs/images/light.jpg" alt="ИКТ-новости">
+                     <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                        <h3 class="uk-margin-remove">Сенсация</h3>
+                        <p class="uk-margin-remove">Все будет но сразу - цитата работает, просто ждите</p>
+                        <a class="text-decor-none slider-btn" href="#">Подробнее</a>
+                     </div>
+                  </div>
+               </li>
+               <li class="uk-width-1-2">
+                  <div class="uk-panel">
+                     <img src="https://getuikit.com/docs/images/photo2.jpg" alt="ИКТ-новости">
+                     <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                        <h3 class="uk-margin-remove">Сенсация</h3>
+                        <p class="uk-margin-remove">Все будет но сразу - цитата работает, просто ждите</p>
+                        <a class="text-decor-none slider-btn" href="#">Подробнее</a>
+                     </div>
+                  </div>
+               </li>
+               <li class="uk-width-1-2">
+                  <div class="uk-panel">
+                     <img src="https://getuikit.com/docs/images/photo3.jpg" alt="ИКТ-новости">
+                     <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                        <h3 class="uk-margin-remove">Сенсация</h3>
+                        <p class="uk-margin-remove">Все будет но сразу - цитата работает, просто ждите</p>
+                        <a class="text-decor-none slider-btn" href="#">Подробнее</a>
+                     </div>
+                  </div>
+               </li>
+               <li class="uk-width-1-2">
+                  <div class="uk-panel">
+                     <img src="https://getuikit.com/docs/images/photo.jpg" alt="ИКТ-новости">
+                     <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                        <h3 class="uk-margin-remove">Сенсация</h3>
+                        <p class="uk-margin-remove">Все будет но сразу - цитата работает, просто ждите</p>
+                        <a class="text-decor-none slider-btn" href="#">Подробнее</a>
+                     </div>
+                  </div>
+               </li>
+               <li class="uk-width-1-2">
+                  <div class="uk-panel">
+                     <img src="https://getuikit.com/docs/images/dark.jpg" alt="">
+                     <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                        <h3 class="uk-margin-remove">Сенсация</h3>
+                        <p class="uk-margin-remove">Все будет но сразу - цитата работает, просто ждите</p>
+                        <a class="text-decor-none slider-btn" href="#">Подробнее</a>
+                     </div>
+                  </div>
+               </li>
+            </ul>
+            
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+         </div>
+      </div>
+   </section>
+
+   <section id="teachers" class="teachers">
+      <div class="wrapper">
+         <h2 class="section-title">Наши учителя</h2>
+
+         <div class="teachers-box flex j-sb flex-align-top flex-wrap">
+            <div class="teachers-box__item">
+               <div class="teachers-box__img">
+                  <img src="/media/img/teacher_1.jpg" alt="ИКТ-учителя">
+               </div>
+
+               <div class="teachers-box__desc">
+                  <h3 class="text-title teachers-box__name">Maria Smith</h3>
+                  <p class="text-desc teachers-box__job">Graphic Designer</p>
+                  
+                  <div class="teachers-box__links">
+                     <a href="#">
+                        <i class="fa fa-pinterest" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                     </a>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="teachers-box__item">
+               <div class="teachers-box__img">
+                  <img src="/media/img/teacher_2.jpg" alt="ИКТ-учителя">
+               </div>
+
+               <div class="teachers-box__desc">
+                  <h3 class="text-title teachers-box__name">Christian Blue</h3>
+                  <p class="text-desc teachers-box__job">Graphic Designer</p>
+                  
+                  <div class="teachers-box__links">
+                     <a href="#">
+                        <i class="fa fa-pinterest" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                     </a>
+                  </div>
+               </div>
+            </div>
+
+            <div class="teachers-box__item">
+               <div class="teachers-box__img">
+                  <img src="/media/img/teacher_3.jpg" alt="ИКТ-учителя">
+               </div>
+
+               <div class="teachers-box__desc">
+                  <h3 class="text-title teachers-box__name">James Brown</h3>
+                  <p class="text-desc teachers-box__job">Graphic Designer</p>
+                  
+                  <div class="teachers-box__links">
+                     <a href="#">
+                        <i class="fa fa-pinterest" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                     </a>
+                  </div>
+               </div>
+            </div>
+
+            <div class="teachers-box__item">
+               <div class="teachers-box__img">
+                  <img src="/media/img/teacher_4.jpg" alt="ИКТ-учителя">
+               </div>
+
+               <div class="teachers-box__desc">
+                  <h3 class="text-title teachers-box__name">Julie Denver</h3>
+                  <p class="text-desc teachers-box__job">Graphic Designer</p>
+                  
+                  <div class="teachers-box__links">
+                     <a href="#">
+                        <i class="fa fa-pinterest" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                     </a>
+                  </div>
+               </div>
+            </div>
+
+            <div class="teachers-box__item">
+               <div class="teachers-box__img">
+                  <img src="/media/img/teacher_5.jpg" alt="ИКТ-учителя">
+               </div>
+
+               <div class="teachers-box__desc">
+                  <h3 class="text-title teachers-box__name">Julie Denver</h3>
+                  <p class="text-desc teachers-box__job">Graphic Designer</p>
+                  
+                  <div class="teachers-box__links">
+                     <a href="#">
+                        <i class="fa fa-pinterest" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                     </a>
+                  </div>
+               </div>
+            </div>
+
+            <div class="teachers-box__item">
+               <div class="teachers-box__img">
+                  <img src="/media/img/teacher_6.jpg" alt="ИКТ-учителя">
+               </div>
+
+               <div class="teachers-box__desc">
+                  <h3 class="text-title teachers-box__name">Julie Denver</h3>
+                  <p class="text-desc teachers-box__job">Graphic Designer</p>
+                  
+                  <div class="teachers-box__links">
+                     <a href="#">
+                        <i class="fa fa-pinterest" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                     </a>
+                     <a href="#">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                     </a>
+                  </div>
+               </div>
+            </div>
          </div>
       </div>
    </section>
