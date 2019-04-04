@@ -58,8 +58,10 @@
                      <p class="news-box__date">{{ post.date|date:"d "}} <span>{{ post.date|date:"M"}}</span></p>
 
                      <div class="news-box__title">
-                        <a class="text-decor-none" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-                        <img src="{{ post.author.profile.img.url }}" alt="" style="width: 65px; height: 65px; border-radius: 50%;">
+                        <div class="flex j-sb">
+                           <a class="text-decor-none" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                           <img class="author-ava" src="{{ post.author.profile.img.url }}">
+                        </div>
                         <p class="news-box__author">Автор: {{ post.author.last_name }} {{ post.author.first_name }}| 3 Comments</p>
                      </div>
                   </div>
