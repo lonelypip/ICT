@@ -27,16 +27,17 @@
             <a href="{% url 'news_url' %}" class="menu_link transition text-decor-none">Новости</a>
          </li>
          <li class="menu_item">
-            <a href="#about-us" class="menu_link transition text-decor-none">О нас</a>
+            <a href="#register" class="menu_link transition text-decor-none" uk-scroll>О нас</a>
          </li>
          <li class="menu_item">
-            <a href="#" class="menu_link transition text-decor-none">Контакты</a>
+            <a href="#services" class="menu_link transition text-decor-none" uk-scroll>Почему мы</a>
          </li>
          <li class="menu_item">
-            <a href="#services" class="menu_link transition text-decor-none">Почему мы?</a>
+            <a href="#footer" class="menu_link transition text-decor-none" uk-scroll>Контакты</a>
+            
          </li>
          <li class="menu_item">
-            <a href="#location" class="menu_link transition text-decor-none">Наше расположение</a>
+            <a href="#" class="menu_link transition text-decor-none">Наше расположение</a>   
          </li>
       </ul>
       <div class="phone_number">
@@ -45,7 +46,7 @@
    </nav>
    {% block content %}
    {% endblock content %}
-   <footer>
+   <footer id="footer">
       <div class="wrapper">
          <h2 class="section-title">Subscribe to newsletter</h2>
 
