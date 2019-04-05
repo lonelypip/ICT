@@ -16,7 +16,7 @@
                {% endfor %}
             {% endif %}
             <h2>Личный кабинет</h2>
-            <div class="user-area">
+            <div class="user-area flex">
                <div class="user-img">
                      <img src="{{ user.profile.img.url }}" alt="" style="width: 65px;height:65px;border-radius: 50%;">
                </div>
@@ -33,7 +33,7 @@
                {% csrf_token %}
                {{ update_user.as_p }}
                {{ img_profile.as_p }}
-               <button type="submit">Изменить</button>
+               <button class="transition" type="submit">Изменить</button>
             </form>
          </div>
       </div>

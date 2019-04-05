@@ -10,42 +10,37 @@
    <link rel="stylesheet" href="{% static 'css/main.css' %}">
    <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}">
    <script src="{% static 'js/uikit.min.js' %}"></script>
-   {% block links %}
-
-   {% endblock %}
+   {% block links %}{% endblock %}
    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-   <nav>
+   <nav class="flex j-sb flex-align-center">
       <div class="logo">
-         <a href="#">ICT</a>
+         <a class="text-decor-none transition" href="{% url 'home_url' %}">ICT</a>
       </div>
 
-      <ul class="menu">
+      <ul class="menu flex">
          <li class="menu_item">
-            <a href="{% url 'home_url' %}" class="menu_link text-decor-none text-decor-none">Главная</a>
+            <a href="{% url 'home_url' %}" class="menu_link transition text-decor-none text-decor-none">Главная</a>
          </li>
          <li class="menu_item">
-            <a href="{% url 'news_url' %}" class="menu_link text-decor-none">Новости</a>
+            <a href="{% url 'news_url' %}" class="menu_link transition text-decor-none">Новости</a>
          </li>
          <li class="menu_item">
-            <a href="#about-us" class="menu_link text-decor-none">О нас</a>
+            <a href="#about-us" class="menu_link transition text-decor-none">О нас</a>
          </li>
          <li class="menu_item">
-            <a href="#" class="menu_link text-decor-none">Контакты</a>
+            <a href="#" class="menu_link transition text-decor-none">Контакты</a>
          </li>
          <li class="menu_item">
-            <a href="#services" class="menu_link text-decor-none">Почему мы?</a>
+            <a href="#services" class="menu_link transition text-decor-none">Почему мы?</a>
          </li>
          <li class="menu_item">
-            <a href="#location" class="menu_link text-decor-none">Наше расположение</a>
+            <a href="#location" class="menu_link transition text-decor-none">Наше расположение</a>
          </li>
       </ul>
       <div class="phone_number">
-         <div>
-            <img src="/media/img/phone-call.svg" alt="img">
-         </div>
-         <p> +7 775 666 1717</p>
+         <p>+7 775 666 1717</p>
       </div>
    </nav>
    {% block content %}
@@ -59,7 +54,7 @@
             <button>Subscribe</button>
          </div>
 
-         <div class="footer-box">
+         <div class="footer-box flex j-sb">
             <div class="footer-box__item">
                <div class="footer-logo">ICT</div>
 
@@ -76,24 +71,24 @@
                <h3 class="footer-title">Menu</h3>
 
                <p>
-                  <a href="#">Home</a>
+                  <a class="text-decor-none" href="#">Home</a>
                </p>
 
                <p>
-                  <a href="#">About Us</a>
+                  <a class="text-decor-none" href="#">About Us</a>
                </p>
 
 
                <p>
-                  <a href="#">Courses</a>
+                  <a class="text-decor-none" href="#">Courses</a>
                </p>
 
                <p>
-                  <a href="#">News</a>
+                  <a class="text-decor-none" href="#">News</a>
                </p>
 
                <p>
-                  <a href="#">Contact</a>
+                  <a class="text-decor-none" href="#">Contact</a>
                </p>
 
             </div>
@@ -101,23 +96,23 @@
             <div class="footer-box__item">
                <h3 class="footer-title">Usefull Links</h3>
                <p>
-                  <a href="#">Testimonials</a>
+                  <a class="text-decor-none" href="#">Testimonials</a>
                </p>
 
                <p>
-                  <a href="#">FAQ</a>
+                  <a class="text-decor-none" href="#">FAQ</a>
                </p>
 
                <p>
-                  <a href="#">Community</a>
+                  <a class="text-decor-none" href="#">Community</a>
                </p>
 
                <p>
-                  <a href="#">Campus Pictures</a>
+                  <a class="text-decor-none" href="#">Campus Pictures</a>
                </p>
 
                <p>
-                  <a href="#">Tuitions</a>
+                  <a class="text-decor-none" href="#">Tuitions</a>
                </p>
             </div>
 
@@ -136,22 +131,22 @@
             </div>
          </div>
 
-         <div class="footer-info">
+         <div class="footer-info flex j-sb">
             <p>Copyright ©2019</p>
             <div class="socials">
-               <a href="#">
+               <a class="text-decor-none" href="#">
                   <i class="fa fa-pinterest" aria-hidden="true"></i>
                </a>
-               <a href="#">
+               <a class="text-decor-none" href="#">
                   <i class="fa fa-linkedin" aria-hidden="true"></i>
                </a>
-               <a href="#">
+               <a class="text-decor-none" href="#">
                   <i class="fa fa-instagram" aria-hidden="true"></i>
                </a>
-               <a href="#">
+               <a class="text-decor-none" href="#">
                   <i class="fa fa-facebook" aria-hidden="true"></i>
                </a>
-               <a href="#">
+               <a class="text-decor-none" href="#">
                   <i class="fa fa-twitter" aria-hidden="true"></i>
                </a>
             </div>

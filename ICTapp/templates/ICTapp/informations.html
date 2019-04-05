@@ -13,12 +13,12 @@
 
          <div class="events-box">
             {% for information in informations %}
-               <div class="events-box__item">
+               <div class="events-box__item flex j-sb flex-align-center">
                   <p class="events-box__date">16 <span>Регион</span></p>
    
                   <div class="events-box__text">
                      <h3 class="text-title events-box__title">
-                        <a href="{{ information.get_absolute_url }}">{{ information.title }}</a>
+                        <a class="transition" href="{{ information.get_absolute_url }}">{{ information.title }}</a>
                      </h3>
                      <p class="text-title events-box__location">{{ information.location }}</p>
                      <p class="text-desc">{{ information.text }}</p>
