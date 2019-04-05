@@ -7,44 +7,11 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-   <div class="news-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/news-bg.jpg">
-      <nav>
-         <div class="logo">
-            <h4>ICT</h4>
-         </div>
-
-         <ul class="menu">
-            <li class="menu_item">
-               <a href="{% url 'home_url' %}" class="text-decor-none menu_link">Главная</a>
-            </li>
-            <li class="menu_item">
-               <a href="#services" class="text-decor-none menu_link go_to">Services</a>
-            </li>
-            <li class="menu_item">
-               <a href="#about-us" class="text-decor-none menu_link go_to">About us</a>
-            </li>
-            <li class="menu_item">
-               <a href="{% url 'news_url' %}" class="text-decor-none menu_link">News</a>
-            </li>
-            <li class="menu_item">
-               <a href="#location" class="text-decor-none menu_link go_to">Location</a>
-            </li>
-            <li class="menu_item">
-               <a href="#" class="text-decor-none menu_link">Contacts</a>
-            </li>
-         </ul>
-         <div class="phone_number">
-            <div>
-               <img src="/media/img/phone-call.svg" alt="img">
-            </div>
-            <p> +7 775 666 1717</p>
-         </div>
-      </nav>
-      
+   <div class="news-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/news-bg.jpg">      
       <h1>Новости</h1>
    </div>
 
-   <section id="news-section" class="news-section">
+   <section id="news-section" class="news-section section">
       <div class="wrapper news-wrap">
          <div class="news-box">
             <div class="news-box__item">
@@ -157,7 +124,7 @@
          </div>
 
          <div class="news-more">
-            <h3 class="text-title news-more__title">Последние посты</h3>
+            <h3 class="text-title news-more__title">Последние новости</h3>
 
             <div class="news-more-box">
                <div class="news-more__item">
