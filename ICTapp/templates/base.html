@@ -40,16 +40,18 @@
             <a href="#" class="menu_link transition text-decor-none">Наше расположение</a>   
          </li>
       </ul>
-      <div class="phone_number">
-         <p>
-            {% if user.is_authenticated %}
-               <a href="{% url 'profile_url' %}" class="text-decor-none">Профиль</a>
+      <div class="auth-box">
+         {% if user.is_authenticated %}
+            <p class="auth-box-true">
+               <a href="{% url 'profile_url' %}" class="text-decor-none transition">Профиль</a>
                <br>
-               <a href="{% url 'sign_out_url' %}" class="text-decor-none">Выйти</a>
-            {% else %}
-               <a href="{% url 'sign_in_url' %}" class="text-decor-none">Авторизоваться</a>
-            {% endif %}
-         </p>
+               <a href="{% url 'sign_out_url' %}" class="text-decor-none transition">Выйти</a>
+            </p>
+         {% else %}
+            <p class="auth-box-false">
+               <a href="{% url 'sign_in_url' %}" class="text-decor-none transition">Авторизоваться</a>
+            </p>
+         {% endif %}
       </div>
    </nav>
    {% block content %}

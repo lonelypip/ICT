@@ -9,7 +9,10 @@
    <section id="news-section" class="news-section section">
       <div class="wrapper news-wrap flex j-sb">
          <div class="news-box">
-            <a class="add-post text-decor-none transition" href="#">Добавить пост</a>
+            {% if user.is_authenticated %}
+               <a class="add-post text-decor-none transition" href="#">Добавить пост</a>
+            {% endif %}
+            
             {% for post in posts %}
                <div class="news-box__item">
                   {% if post.img %}

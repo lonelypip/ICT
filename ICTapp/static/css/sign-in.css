@@ -1,5 +1,5 @@
 nav {
-	display: none;	
+	display: none !important;
 }
 
 .login-page {
@@ -9,7 +9,7 @@ nav {
 }
 
 .login-form-box {
-	padding-top: 10%;
+	padding-top: 8%;
 }
 
 .login-form {
