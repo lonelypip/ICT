@@ -7,53 +7,20 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-   <div class="news-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/news-bg.jpg">
-      <nav>
-         <div class="logo">
-            <h4>ICT</h4>
-         </div>
-
-         <ul class="menu">
-            <li class="menu_item">
-               <a href="{% url 'home_url' %}" class="text-decor-none menu_link">Главная</a>
-            </li>
-            <li class="menu_item">
-               <a href="#services" class="text-decor-none menu_link go_to">Services</a>
-            </li>
-            <li class="menu_item">
-               <a href="#about-us" class="text-decor-none menu_link go_to">About us</a>
-            </li>
-            <li class="menu_item">
-               <a href="{% url 'news_url' %}" class="text-decor-none menu_link">News</a>
-            </li>
-            <li class="menu_item">
-               <a href="#location" class="text-decor-none menu_link go_to">Location</a>
-            </li>
-            <li class="menu_item">
-               <a href="#" class="text-decor-none menu_link">Contacts</a>
-            </li>
-         </ul>
-         <div class="phone_number">
-            <div>
-               <img src="/media/img/phone-call.svg" alt="img">
-            </div>
-            <p> +7 775 666 1717</p>
-         </div>
-      </nav>
-      
+   <div class="news-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/news-bg.jpg">      
       <h1>Новости</h1>
    </div>
 
-   <section id="news-section" class="news-section">
+   <section id="news-section" class="news-section section">
       <div class="wrapper news-wrap">
-         <div class="news-box">
+         <div class="news-box flex j-sb">
             <div class="news-box__item">
                {% if post.img %}
                   <div class="news-box__img">
                      <img src="{{ post.img.url }}" alt="news">
                   </div>
                {% endif %}
-               <div class="news-box__container">
+               <div class="news-box__container flex">
                   <div>
                      <p class="news-box__date">{{ post.date|date:"d "}} <span>{{ post.date|date:"M"}}</span></p>
                      {% if post.author == user %}
@@ -61,12 +28,12 @@
                            <button class="news-action-button uk-button-small uk-button-default" type="button">Еще</button>
                            <div class="news-action-dropdown" uk-dropdown="mode: click; pos: top-justify;">
                               <p>
-                                 <a href="{% url 'news_update_url' post.id %}" class="text-decor-none news-action-button__link news-action-button__link-edit">Редактировать 
+                                 <a href="{% url 'news_update_url' post.id %}" class="text-decor-none news-action-button__link news-action-button__link-edit transition">Редактировать 
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
                                  </a>
                               </p>
                               <p>
-                                 <a href="{% url 'news_delete_url' post.id %}" class="text-decor-none news-action-button__link news-action-button__link-delete">Удалить пост
+                                 <a href="{% url 'news_delete_url' post.id %}" class="text-decor-none news-action-button__link news-action-button__link-delete transition">Удалить пост
                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                                  </a>
                               </p>
@@ -108,7 +75,7 @@
                <h3 class="text-title news-detail__comment">Comments</h3>
 
                <div class="news-comment-box">
-                  <div class="news-comment-box__item">
+                  <div class="news-comment-box__item flex flex-align-center">
                      <div class="news-comment-box__ava">
                         <img src="/media/img/comment_1.jpg" alt="">
                      </div>
@@ -125,7 +92,7 @@
                      </div>
                   </div>
 
-                  <div class="news-comment-box__item">
+                  <div class="news-comment-box__item flex flex-align-center">
                      <div class="news-comment-box__ava">
                         <img src="/media/img/comment_2.jpg" alt="">
                      </div>
@@ -145,7 +112,7 @@
 
                <h3 class="text-title news-detail__comment">Leave a comment</h3>
 
-               <div class="add-comment-form">
+               <div class="add-comment-form transition">
                   <form>
                      <input class="add-comment__field" type="text" placeholder="Name">
                      <input class="add-comment__field" type="email" placeholder="E-mail">
@@ -157,7 +124,7 @@
          </div>
 
          <div class="news-more">
-            <h3 class="text-title news-more__title">Последние посты</h3>
+            <h3 class="text-title news-more__title">Последние новости</h3>
 
             <div class="news-more-box">
                <div class="news-more__item">

@@ -1,3 +1,7 @@
+nav {
+	display: none;	
+}
+
 .login-page {
 	background: url(/media/img/sign-in-bg.jpg) #E9FAFF;
 	background-size: cover;
@@ -12,7 +16,7 @@
 	background: #fff;
 	padding: 75px 55px 85px 55px;
 	max-width: 500px;
-	border-radius: 10px;
+	border-radius: 4px;
 	box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
 	margin: 0 auto;
 	color: #000000;

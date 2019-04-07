@@ -7,89 +7,56 @@
 {% block title %}Факультет - ИКТ. Университет им.Шакарима{% endblock title %}
 
 {% block content %}
-   <header style="background: url('media/img/slider_background.jpg');">
-      <nav>
-         <div class="logo">
-            <h1>ICT</h1>
-         </div>
-
-         <ul class="menu">
-            <li class="menu_item">
-               <a href="{% url 'home_url' %}" class="menu_link">Главная</a>
-            </li>
-            <li class="menu_item">
-               <a href="#services" class="menu_link go_to">Services</a>
-            </li>
-            <li class="menu_item">
-               <a href="#about-us" class="menu_link go_to">About us</a>
-            </li>
-            <li class="menu_item">
-               <a href="{% url 'news_url' %}" class="menu_link">News</a>
-            </li>
-            <li class="menu_item">
-               <a href="#location" class="menu_link go_to">Location</a>
-            </li>
-            <li class="menu_item">
-               <a href="#" class="menu_link">Contacts</a>
-            </li>
-         </ul>
-         <div class="phone_number">
-            <div>
-               <img src="/media/img/phone-call.svg" alt="img">
-            </div>
-            <p> +7 775 666 1717</p>
-         </div>
-      </nav>
-
+   <header>
       <div class="principal">
          <h1>Website</h1>
          <p>Lorem ipsum dolor sit amet consectetur.</p>
       </div>
 
-      <div class="links">
-         <a href="#" class="text-decor-none links-box">
-            <div class="links_item">
+      <div class="links flex j-sb">
+         <a href="#" class="text-decor-none links-box transition">
+            <div class="links_item flex j-se">
                <div class="links_icon">
-                  <img src="/media/img/earth-globe.svg" /alt="earth-globe">
+                  <img src="/media/img/earth-globe.svg" alt="earth-globe">
                </div>
                <div class="links_text">
-                  <p class="links-title">Специальности</p>
-                  <p class="view-more">View more</p>
+                  <p class="links-title transition">Специальности</p>
+                  <p class="view-more transition">View more</p>
                </div>
             </div>
          </a>
 
-         <a href="{% url 'informations_url' %}" class="text-decor-none links-box">
-            <div class="links_item">
+         <a href="{% url 'informations_url' %}" class="text-decor-none links-box transition">
+            <div class="links_item flex j-se">
                <div class="links_icon">
                   <img src="/media/img/books.svg" alt="books">
                </div>
                <div class="links_text">
-                  <p class="links-title">Студентческая жизнь</p>
-                  <p class="view-more">View more</p>
+                  <p class="links-title transition">Студентческая жизнь</p>
+                  <p class="view-more transition">View more</p>
                </div>
             </div>
          </a>
 
-         <a href="#" class="text-decor-none links-box">
-            <div class="links_item">
+         <a href="#" class="text-decor-none links-box transition">
+            <div class="links_item flex j-se">
                <div class="links_icon">
                   <img src="/media/img/professor.svg" alt="professor">
                </div>
                <div class="links_text">
-                  <p class="links-title">Преподаватели</p>
-                  <p class="view-more">View more</p>
+                  <p class="links-title transition">Преподаватели</p>
+                  <p class="view-more transition">View more</p>
                </div>
             </div>
          </a>
       </div>
    </header>
 
-   <section id="talents" class="talents">
+   <section id="talents" class="talents section">
       <div class="wrapper">
-         <h2 class="section-title talents-title">Popular Courses</h2>
+         <h2 class="section-title talents-title">Специальности</h2>
 
-         <div class="talents-box">
+         <div class="talents-box flex j-sb flex-wrap">
             <div class="talents-box__item">
                <div class="talents-box__img">
                   <img src="/media/img/course_1.jpg" alt="talent">
@@ -100,7 +67,7 @@
                   <div class="text-desc talents-box__desc">Adobe Guide, Layes, Smart Objects etc...</div>
                </div>
 
-               <div class="talents-box__author">
+               <div class="talents-box__author flex flex-align-center j-se">
                   <div class="talents-box__avatar">
                      <img src="/media/img/author.jpg" alt="">
                   </div>
@@ -119,7 +86,7 @@
                   <div class="text-desc talents-box__desc">Adobe Guide, Layes, Smart Objects etc...</div>
                </div>
 
-               <div class="talents-box__author">
+               <div class="talents-box__author flex flex-align-center j-se">
                   <div class="talents-box__avatar">
                      <img src="/media/img/author.jpg" alt="">
                   </div>
@@ -138,12 +105,147 @@
                   <div class="text-desc talents-box__desc">Adobe Guide, Layes, Smart Objects etc...</div>
                </div>
 
-               <div class="talents-box__author">
+               <div class="talents-box__author flex flex-align-center j-se">
                   <div class="talents-box__avatar">
                      <img src="media/img/author.jpg" alt="">
                   </div>
 
                   <p class="talents-box__name">Michael Smith, <span>Author</span></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section id="specialty" class="specialty section">
+      <div class="wrapper news-wrap flex j-sb">
+         <div class="news-box">
+            <h3 class="specialty-title">Автоматизация и управление</h3>
+
+            <div class="specialty-box">
+               <ul class="uk-tab-bottom" uk-tab>
+                  <li class="uk-active"><a href="#">Описание программы</a></li>
+                  <li><a href="#">Основные дисциплины</a></li>
+                  <li><a href="#">Карьерные перспективы</a></li>
+               </ul>
+               <ul class="uk-switcher uk-margin">
+                  <li>
+                     <dl class="uk-description-list">
+                        <dt class="specialty-box__desc-title">Описание</dt>
+                        <dd>
+                           Специальность для тех, кто любит программирование, 
+                           хочет свободно владеть современными методами 
+                           разработки программного обеспечения, сетевыми 
+                           технологиями различного масштаба и управлением
+                           информационными системами различного назначения
+                        </dd>
+
+                        <dt class="specialty-box__desc-title">Цель</dt>
+                        <dd>
+                           <p>
+                              <strong>Образовательные цели программы описывают в широком понимании карьерные и профессиональные достижения выпускников, к которым готовит их данная программа.</strong>
+                           </p>
+                           <p>
+                              Через 3 года после получения степени бакалавра по специальности 5В070200 Автоматизация и управление мы ожидаем, что наши выпускники станут:
+                           </p>
+                           <p>
+                              - опытными, технически компетентными инженерами в области автоматизации и управления с сильными фундаментальными знаниями и практическими навыками в техники и технологиях, которые позволят им применять широкий спектр различных подходов для анализа и синтеза проблем, а также стратегий для решения комплексных технических задач в промышленности;
+                           </p>
+                           <p>
+                              - компетентными, целеустремленными и опытными членами и лидерами команд по проектированию и разработке систем, способными действовать самостоятельно, профессионально и эффективно в процессе применения концептуальных знаний и инженерных навыков, приобретенных во время учебы в КБТУ, а также в течение карьерного развития при проектировании, разработке и внедрении программных решений и систем как для частных компаний, так и для государственных организаций и ведомств;
+                           </p>
+                           <p>
+                              - пионерами в информационных технологиях, способными применять концептуальные знания и инженерные навыки не только для проектирования, разработки и эксплуатации современных решений и технологий автоматизации и управления, но и для внедрения положительных изменений на рабочих местах, а также во благо общества;
+                           </p>
+                           <p>
+                              - профессионалами, способными непрерывно обучаться в послевузовских, профессиональных и сертификационных программах, признанные на национальном и международном уровнях, а также способными диагностировать, анализировать, определять и заполнять недостатки знаний путем получения опыта от различных сред профессиональной деятельности.
+                           </p>
+                        </dd>
+
+                        <dt class="specialty-box__desc-title">Задачи</dt>
+                        <dd class="border-none">
+                           <p>
+                              <strong>Задачи программы более конкретным образом описывают навыки и знания, которыми должны обладать студенты к моменту окончания университета.</strong>
+                           </p>
+
+                           <p>
+                              Понимать – понимать математические и физические основы автоматизации и управления, и как они используются в электрических устройствах и системах. Понимать, что инженерные знания должны применяться с соблюдением этических норм на благо общества.
+                           </p>
+                           
+                           <p>
+                              Подвергать сомнению – критически оценивать альтернативные предположения, подходы, процедуры, компромиссы и результаты, относящиеся к инженерным проблемам.
+                           </p>
+
+                           <p>
+                              Разрабатывать – разрабатывать различные электронные и компьютерные компоненты и системы, для приложений включающих в себя обработку сигналов, коммуникации, компьютерные сети и системы управления.
+                           </p>
+
+                           <p>
+                              Быть лидером – возглавлять команды инженеров разрабатывающих проекты, исполнять различные роли в команде и понимать, как они вносят свой вклад в выполнение поставленной задачи.
+                           </p>
+
+                           <p>
+                              Взаимодействовать – использовать письменное и вербальное общение для документирования работы и представления полученных результатов.
+                           </p>
+                        </dd>
+                     </dl>
+                  </li>
+                  <li>
+                     <ul class="uk-list uk-list-divider">
+                        <li>Информатика</li>
+                        <li>Технологии программирования</li>
+                        <li>Высшая математика I, II</li>
+                        <li>Английский язык I,II</li>
+                        <li>Физика I</li>
+                     </ul>
+                  </li>
+                  <li>
+                     <p>
+                        Успехи наших выпускников на протяжении нескольких лет являются подтверждением высокого уровня подготовки специалистов в области IT. Визитной карточкой выпускника нашего факультета всегда были широкий кругозор и высокие профессиональные качества, аналитическое мышление и умение работать в команде. Мы надеемся, что нынешние студенты, и те, кто придут учиться к нам на факультет в будущем, добьются на профессиональном поприще не меньших успехов.
+                     </p>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         
+         <div class="news-more">
+            <h3 class="text-title news-more__title">Последние новости</h3>
+
+            <div class="news-more-box">
+               <div class="news-more__item">
+                  <div class="news-more__img">
+                     <img src="/media/img/latest_1.jpg" alt="news">
+                  </div>
+
+                  <a class="text-decor-none news-more__link" href="new-post.html">
+                     Why do you need a qualification?
+                  </a>
+                  
+                  <p class="news-more__author">By Christian Smith <span>|</span> 3 Comments</p>
+               </div>
+
+               <div class="news-more__item">
+                  <div class="news-more__img">
+                     <img src="/media/img/latest_2.jpg" alt="news">
+                  </div>
+
+                  <a class="text-decor-none news-more__link" href="new-post.html">
+                     Why do you need a qualification?
+                  </a>
+                  
+                  <p class="news-more__author">By Christian Smith <span>|</span> 3 Comments</p>
+               </div>
+
+               <div class="news-more__item">
+                  <div class="news-more__img">
+                     <img src="/media/img/latest_3.jpg" alt="news">
+                  </div>
+
+                  <a class="text-decor-none news-more__link" href="new-post.html">
+                     Why do you need a qualification?
+                  </a>
+                  
+                  <p class="news-more__author">By Christian Smith <span>|</span> 3 Comments</p>
                </div>
             </div>
          </div>
@@ -165,7 +267,7 @@
                vitae tempo ...
             </p>
 
-            <a class="text-decor-none register-submit"href="#">Подробнее</a>
+            <a class="text-decor-none register-submit transition"href="#">Подробнее</a>
          </div>
       </div>
 
@@ -183,17 +285,17 @@
                vitae tempo ...
             </p>
 
-            <a class="text-decor-none register-submit" href="#">Подробнее</a>
+            <a class="text-decor-none register-submit transition" href="#">Подробнее</a>
             <<!-- -->>
          </div>
       </div>
    </section>
 
-   <section id="services" class="services">
+   <section id="services" class="services section">
       <div class="wrapper">
          <h2 class="section-title">Почему мы?</h2>
 
-         <div class="services-box">
+         <div class="services-box flex j-sb flex-wrap">
             <div class="services-box__item">
                <div class="services-box__icon">
                   <img src="/media/img/earth-globe.svg" alt="envelope">
@@ -287,9 +389,9 @@
       </div>
    </section>
 
-   <section id="testimonials" class="testimonials">
+   <section id="testimonials" class="testimonials section">
       <div class="wrapper">
-         <h2 class="section-title testimonials-title">Что наши говорят наши студенты</h2>
+         <h2 class="section-title testimonials-title">Что говорят наши студенты</h2>
          
          <div class="slider-review uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="min-height: 300">
             <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
@@ -368,12 +470,12 @@
                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
             </div>
 
-            <ul class="slider-review-dotnav uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
+            <ul class="slider-review-dotnav uk-slideshow-nav uk-dotnav uk-flex-center uk-margin flex-align-center"></ul>
          </div>
       </div>
    </section>
 
-   <section id="news-slider" class="news-slider">
+   <section id="news-slider" class="news-slider section">
       <div>
          <h2 class="section-title">Новости</h2>
 
@@ -384,8 +486,8 @@
                      <img src="https://getuikit.com/docs/images/light.jpg" alt="ИКТ-новости">
                      <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
                         <h3 class="uk-margin-remove">Сенсация</h3>
-                        <p class="uk-margin-remove">Все будет но сразу - цитата работает, просто ждите</p>
-                        <a class="text-decor-none slider-btn" href="#">Подробнее</a>
+                        <p class="uk-margin-remove">Все будет, но не сразу - цитата работает, просто ждите</p>
+                        <a class="text-decor-none slider-btn transition" href="#">Подробнее</a>
                      </div>
                   </div>
                </li>
@@ -394,8 +496,8 @@
                      <img src="https://getuikit.com/docs/images/photo2.jpg" alt="ИКТ-новости">
                      <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
                         <h3 class="uk-margin-remove">Сенсация</h3>
-                        <p class="uk-margin-remove">Все будет но сразу - цитата работает, просто ждите</p>
-                        <a class="text-decor-none slider-btn" href="#">Подробнее</a>
+                        <p class="uk-margin-remove">Все будет, но не сразу - цитата работает, просто ждите</p>
+                        <a class="text-decor-none slider-btn transition" href="#">Подробнее</a>
                      </div>
                   </div>
                </li>
@@ -404,8 +506,8 @@
                      <img src="https://getuikit.com/docs/images/photo3.jpg" alt="ИКТ-новости">
                      <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
                         <h3 class="uk-margin-remove">Сенсация</h3>
-                        <p class="uk-margin-remove">Все будет но сразу - цитата работает, просто ждите</p>
-                        <a class="text-decor-none slider-btn" href="#">Подробнее</a>
+                        <p class="uk-margin-remove">Все будет, но не сразу - цитата работает, просто ждите</p>
+                        <a class="text-decor-none slider-btn transition" href="#">Подробнее</a>
                      </div>
                   </div>
                </li>
@@ -414,8 +516,8 @@
                      <img src="https://getuikit.com/docs/images/photo.jpg" alt="ИКТ-новости">
                      <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
                         <h3 class="uk-margin-remove">Сенсация</h3>
-                        <p class="uk-margin-remove">Все будет но сразу - цитата работает, просто ждите</p>
-                        <a class="text-decor-none slider-btn" href="#">Подробнее</a>
+                        <p class="uk-margin-remove">Все будет, но не сразу - цитата работает, просто ждите</p>
+                        <a class="text-decor-none slider-btn transition" href="#">Подробнее</a>
                      </div>
                   </div>
                </li>
@@ -424,8 +526,8 @@
                      <img src="https://getuikit.com/docs/images/dark.jpg" alt="">
                      <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
                         <h3 class="uk-margin-remove">Сенсация</h3>
-                        <p class="uk-margin-remove">Все будет но сразу - цитата работает, просто ждите</p>
-                        <a class="text-decor-none slider-btn" href="#">Подробнее</a>
+                        <p class="uk-margin-remove">Все будет, но не сразу - цитата работает, просто ждите</p>
+                        <a class="text-decor-none slider-btn transition" href="#">Подробнее</a>
                      </div>
                   </div>
                </li>
@@ -437,16 +539,16 @@
       </div>
    </section>
 
-   <section id="teachers" class="teachers">
+   <section id="teachers" class="teachers section">
       <div class="wrapper">
          <h2 class="section-title">Наши учителя</h2>
 
-         <div class="teachers-box flex j-sb flex-align-top flex-wrap">
+         <div class="teachers-box flex j-sb flex-wrap">
             <div class="teachers-box__item">
                <div class="teachers-box__img uk-inline">
                   <img src="/media/img/teacher_1.jpg" alt="ИКТ-учителя">
 
-                  <a class="teachers-overlay-link" href="#">
+                  <a class="teachers-overlay-link transition" href="#">
                      <div class="uk-overlay-primary uk-position-cover">
                         <div class="uk-position-center">
                            <p href="#">Подробнее</p>
@@ -483,7 +585,7 @@
                <div class="teachers-box__img uk-inline">
                   <img src="/media/img/teacher_2.jpg" alt="ИКТ-учителя">
 
-                  <a class="teachers-overlay-link" href="#">
+                  <a class="teachers-overlay-link transition" href="#">
                      <div class="uk-overlay-primary uk-position-cover">
                         <div class="uk-position-center">
                            <p href="#">Подробнее</p>
@@ -497,19 +599,19 @@
                   <p class="text-desc teachers-box__job">Graphic Designer</p>
                   
                   <div class="teachers-box__links">
-                     <a href="#">
+                     <a class="transition" href="#">
                         <i class="fa fa-pinterest" aria-hidden="true"></i>
                      </a>
-                     <a href="#">
+                     <a class="transition" href="#">
                         <i class="fa fa-linkedin" aria-hidden="true"></i>
                      </a>
-                     <a href="#">
+                     <a class="transition" href="#">
                         <i class="fa fa-instagram" aria-hidden="true"></i>
                      </a>
-                     <a href="#">
+                     <a class="transition" href="#">
                         <i class="fa fa-facebook" aria-hidden="true"></i>
                      </a>
-                     <a href="#">
+                     <a class="transition" href="#">
                         <i class="fa fa-twitter" aria-hidden="true"></i>
                      </a>
                   </div>
@@ -520,7 +622,7 @@
                <div class="teachers-box__img uk-inline">
                   <img src="/media/img/teacher_3.jpg" alt="ИКТ-учителя">
 
-                  <a class="teachers-overlay-link" href="#">
+                  <a class="teachers-overlay-link transition" href="#">
                      <div class="uk-overlay-primary uk-position-cover">
                         <div class="uk-position-center">
                            <p href="#">Подробнее</p>
@@ -557,7 +659,7 @@
                <div class="teachers-box__img uk-inline">
                   <img src="/media/img/teacher_4.jpg" alt="ИКТ-учителя">
 
-                  <a class="teachers-overlay-link" href="#">
+                  <a class="teachers-overlay-link transition" href="#">
                      <div class="uk-overlay-primary uk-position-cover">
                         <div class="uk-position-center">
                            <p href="#">Подробнее</p>
@@ -594,7 +696,7 @@
                <div class="teachers-box__img uk-inline">
                   <img src="/media/img/teacher_5.jpg" alt="ИКТ-учителя">
 
-                  <a class="teachers-overlay-link" href="#">
+                  <a class="teachers-overlay-link transition" href="#">
                      <div class="uk-overlay-primary uk-position-cover">
                         <div class="uk-position-center">
                            <p href="#">Подробнее</p>
@@ -631,7 +733,7 @@
                <div class="teachers-box__img uk-inline">
                   <img src="/media/img/teacher_6.jpg" alt="ИКТ-учителя">
 
-                  <a class="teachers-overlay-link" href="#">
+                  <a class="teachers-overlay-link transition" href="#">
                      <div class="uk-overlay-primary uk-position-cover">
                         <div class="uk-position-center">
                            <p href="#">Подробнее</p>
@@ -667,7 +769,7 @@
       </div>
    </section>
 
-   <section id="teachers-detail" class="teachers-detail">
+   <section id="teachers-detail" class="teachers-detail section">
       <div class="teachers-detail-ava-box">
          <div class="teachers-detail-ava__img">
             <img src="/media/img/teacher_1.jpg" alt="ИКТ-учителя">
@@ -682,25 +784,25 @@
                <p class="teachers-detail-info__job-title">Web Designer</p>
 
                <div class="teachers-detail-info__links">
-                  <a href="#">
+                  <a class="transition" href="#">
                      <i class="fa fa-pinterest" aria-hidden="true"></i>
                   </a>
-                  <a href="#">
+                  <a class="transition" href="#">
                      <i class="fa fa-linkedin" aria-hidden="true"></i>
                   </a>
-                  <a href="#">
+                  <a class="transition" href="#">
                      <i class="fa fa-instagram" aria-hidden="true"></i>
                   </a>
-                  <a href="#">
+                  <a class="transition" href="#">
                      <i class="fa fa-facebook" aria-hidden="true"></i>
                   </a>
-                  <a href="#">
+                  <a class="transition" href="#">
                      <i class="fa fa-twitter" aria-hidden="true"></i>
                   </a>
                </div>
             </div>
 
-            <div class="teachers-detail-info__personal-info flex j-sb flex-align-top">
+            <div class="teachers-detail-info__personal-info flex j-sb">
                <div>
                   <p class="teachers-detail-info__personal-title">Location</p>
                   <p class="teachers-detail-info__personal-desc">Portland, OR</p>
