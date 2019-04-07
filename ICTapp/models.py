@@ -19,3 +19,27 @@ class Information(models.Model):
    
    def get_absolute_url(self):
       return reverse('information_detail_url', kwargs={'pk':self.pk})
+
+
+class Specialty(models.Model):
+   name = models.CharField(max_length=100)
+   slug = models.SlugField()
+   description = models.TextField()
+   purpose = models.TextField()
+   tasks = models.TextField()
+   perspectives = models.TextField()
+   img = models.ImageField(upload_to='Specialty_images', blank=True)
+
+   def __str__(self):
+      return self.name
+   
+   def get_absolute_url(self):
+      return reverse('specialty_detail_url', kwargs={'slug':self.slug})
+
+
+class Discipline(models.Model):
+   specialty = models.ForeignKey(Specialty, on_delete=models.CASCADE, related_name="disciplines")
+   name = models.CharField(max_length=100)
+
+   def __str__(self):
+      return self.name

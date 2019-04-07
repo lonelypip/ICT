@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}ICT - Specialty{% endblock %}
+
+{% block content %}
+   <div class="news-header parallax-window" data-parallax="scroll" data-image-src="/media/background-images/news-bg.jpg">      
+      <h1>Specialty</h1>
+   </div>
+
+   <section id="events" class="events section">
+      <div class="wrapper">
+
+         <section id="talents" class="talents section">
+            <div class="wrapper">
+               <h2 class="section-title talents-title">Специальности</h2>
+      
+               <div class="talents-box flex j-sb flex-wrap">
+                  {% for speciality in specialty %}
+                     <a href="{{ speciality.get_absolute_url }}">
+                        <div class="talents-box__item">
+                           <div class="talents-box__img">
+                              <img src="{{ speciality.img.url }}" alt="talent">
+                           </div>
+            
+                           <div class="talents-box__text">
+                              <div class="text-title talents-box__title">{{ speciality.name }}</div>
+                           </div>
+            
+                           <div class="talents-box__author flex flex-align-center j-se">
+                              <div class="talents-box__avatar">
+                                 <img src="/media/img/author.jpg" alt="">
+                              </div>
+            
+                              <p class="talents-box__name">Michael Smith, <span>Author</span></p>
+                           </div>
+                        </div>
+                     </a>
+                  {% endfor %}
+               </div>
+            </div>
+         </section>
+      </div>
+   </section>
+{% endblock content %}

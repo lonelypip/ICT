@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block title %}{{ speciality.name }}{% endblock %}
+
+{% block content %}
+   <div class="news-header">
+      <h1>{{ speciality.name }}</h1>
+   </div>
+
+
+   <section id="specialty" class="specialty section">
+      <div class="wrapper news-wrap flex j-sb">
+         <div class="news-box">
+            <h3 class="specialty-title">{{ speciality.name }}</h3>
+
+            <div class="specialty-box">
+               <ul class="uk-tab-bottom" uk-tab>
+                  <li class="uk-active"><a href="#">Описание программы</a></li>
+                  <li><a href="#">Основные дисциплины</a></li>
+                  <li><a href="#">Карьерные перспективы</a></li>
+               </ul>
+               <ul class="uk-switcher uk-margin">
+                  <li>
+                     <dl class="uk-description-list">
+                        <dt class="specialty-box__desc-title">Описание</dt>
+                        <dd>
+                           {{ speciality.description }} 
+                        </dd>
+
+                        <dt class="specialty-box__desc-title">Цель</dt>
+                        <dd>
+                           {{ speciality.purpose|safe }}
+                        </dd>
+
+                        <dt class="specialty-box__desc-title">Задачи</dt>
+                        <dd class="border-none">
+                           {{ speciality.tasks|safe }}
+                        </dd>
+                     </dl>
+                  </li>
+                  <li>
+                     <ul class="uk-list uk-list-divider">
+                        {% for discipline in speciality.disciplines.all %}
+                           <li>{{ discipline }}</li>
+                        {% endfor %}
+                     </ul>
+                  </li>
+                  <li>
+                     <p>
+                        {{ speciality.perspectives }}
+                     </p>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         
+         <div class="news-more">
+            <h3 class="text-title news-more__title">Последние новости</h3>
+
+            <div class="news-more-box">
+               <div class="news-more__item">
+                  <div class="news-more__img">
+                     <img src="/media/img/latest_1.jpg" alt="news">
+                  </div>
+
+                  <a class="text-decor-none news-more__link" href="new-post.html">
+                     Why do you need a qualification?
+                  </a>
+                  
+                  <p class="news-more__author">By Christian Smith <span>|</span> 3 Comments</p>
+               </div>
+
+               <div class="news-more__item">
+                  <div class="news-more__img">
+                     <img src="/media/img/latest_2.jpg" alt="news">
+                  </div>
+
+                  <a class="text-decor-none news-more__link" href="new-post.html">
+                     Why do you need a qualification?
+                  </a>
+                  
+                  <p class="news-more__author">By Christian Smith <span>|</span> 3 Comments</p>
+               </div>
+
+               <div class="news-more__item">
+                  <div class="news-more__img">
+                     <img src="/media/img/latest_3.jpg" alt="news">
+                  </div>
+
+                  <a class="text-decor-none news-more__link" href="new-post.html">
+                     Why do you need a qualification?
+                  </a>
+                  
+                  <p class="news-more__author">By Christian Smith <span>|</span> 3 Comments</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   
+
+{% endblock content %}

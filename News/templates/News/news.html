@@ -10,7 +10,7 @@
       <div class="wrapper news-wrap flex j-sb">
          <div class="news-box">
             {% if user.is_authenticated %}
-               <a class="add-post text-decor-none transition" href="#">Добавить пост</a>
+               <a class="add-post text-decor-none transition" href="{% url 'news_add_url' %}">Добавить пост</a>
             {% endif %}
             
             {% for post in posts %}
