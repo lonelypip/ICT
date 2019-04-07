@@ -679,10 +679,22 @@ footer .section-title {
    margin-right: 0;
 }
 
-
-
-
 /* ------------------------------ News ------------------------------ */
+
+.add-post {
+   display: block;
+   background: #ffb606;
+   color: #fff;
+   padding: 8px 0;
+   text-align: center;
+   margin-bottom: 30px;
+}
+
+.add-post:hover {
+   color: #fff;
+   -webkit-box-shadow: 5px 6px 8px -6px rgba(0,0,0,0.75);
+           box-shadow: 5px 6px 8px -6px rgba(0,0,0,0.75);
+}
 
 .news-header {
    background: url('/media/background-images/news-bg.jpg');
