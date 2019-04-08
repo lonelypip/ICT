@@ -21,8 +21,8 @@
                      <img src="{{ user.profile.img.url }}" alt="" style="width: 65px;height:65px;border-radius: 50%;">
                </div>
                <div class="user-info">
-                  <p><strong> @{{ user.username }}</strong></p>
                   <p><strong> {{ user.first_name }} {{ user.last_name }}</strong></p>
+                  <p><strong> @{{ user.username }}</strong></p>
                   <p><strong> {{ user.email }}</strong></p>
                </div>
             </div>
@@ -30,7 +30,7 @@
          <hr>
          <div style="padding-top: 50px;" class="profile">
             <h2>Изменение данных</h2>
-            <form method="POST" enctype="multipart/form-data">
+            <form class="edit-profile-form" method="POST" enctype="multipart/form-data">
                {% csrf_token %}
                {{ update_user.as_p }}
                {{ img_profile.as_p }}

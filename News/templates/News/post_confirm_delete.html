@@ -21,7 +21,7 @@
             <form method="POST" enctype="multipart/form-data">
                {% csrf_token %}
                <button class="transition" type="submit">Удалить</button>
-               <a href="{{ object.get_absolute_url }}">Отмена</a>
+               <a class="delete-post-cancel transition text-decor-none" href="{{ object.get_absolute_url }}">Отмена</a>
             </form>
          </div>
       </div>
