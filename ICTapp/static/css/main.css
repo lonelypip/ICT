@@ -379,7 +379,7 @@ nav .menu {
 
 .register-wrap {
    max-width: 60%;
-   margin: 20% auto 0;
+   margin: 15% auto 0;
 }
 
 .register-title {
@@ -982,6 +982,8 @@ footer .section-title {
    margin-bottom: 17px;;
 }
 
+.post-update input:focus,
+.post-update textarea:focus,
 .add-post-form textarea:focus,
 .add-post-form input:focus,
 .add-comment-form textarea:focus,
