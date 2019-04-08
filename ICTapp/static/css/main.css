@@ -982,13 +982,16 @@ footer .section-title {
    margin-bottom: 17px;;
 }
 
+.add-post-form textarea:focus,
+.add-post-form input:focus,
 .add-comment-form textarea:focus,
 .add-comment-form input:focus,
 .edit-profile-form input:focus {
    outline: 2px solid #ffb606;
 }
 
-.add-comment-form textarea {
+.add-comment-form textarea,
+.add-post-form textarea {
    min-height: 70px;
    height: 200px;
    resize: vertical;
