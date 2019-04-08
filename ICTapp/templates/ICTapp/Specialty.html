@@ -15,25 +15,17 @@
       
                <div class="talents-box flex j-sb flex-wrap">
                   {% for speciality in specialty %}
-                     <a href="{{ speciality.get_absolute_url }}">
-                        <div class="talents-box__item">
-                           <div class="talents-box__img">
-                              <img src="{{ speciality.img.url }}" alt="talent">
-                           </div>
-            
-                           <div class="talents-box__text">
-                              <div class="text-title talents-box__title">{{ speciality.name }}</div>
-                           </div>
-            
-                           <div class="talents-box__author flex flex-align-center j-se">
-                              <div class="talents-box__avatar">
-                                 <img src="/media/img/author.jpg" alt="">
-                              </div>
-            
-                              <p class="talents-box__name">Michael Smith, <span>Author</span></p>
-                           </div>
+                     <div class="talents-box__item">
+                        <div class="talents-box__img">
+                           <img src="{{ speciality.img.url }}" alt="talent">
                         </div>
-                     </a>
+         
+                        <div class="talents-box__text">
+                           <div class="text-title talents-box__title">{{ speciality.name }}</div>
+                        </div>
+         
+                        <a class="talents-box__link text-decor-none transition" href="{{ speciality.get_absolute_url }}">Подрбнее</a>
+                     </div>
                   {% endfor %}
                </div>
             </div>

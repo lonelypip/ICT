@@ -7,6 +7,11 @@
    text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
 
+#map {
+   width: 100%;
+   height: 180px;
+}
+
 /* ------------------------------ Partials ------------------------------ */
 
 .text-decor-none,
@@ -144,8 +149,8 @@ nav {
    position: fixed;
    z-index: 999;
    top: 4%;
-   left: 10%;
-   width: 80%;
+   width: 85%;
+   left: 7.5%;
    background-color: #fff;
    color: #1a1a1a;
    -webkit-box-shadow: 0 8px 6px -6px #999;
@@ -154,11 +159,10 @@ nav {
 }
 
 .logo {
-   margin: 0 auto;
+   margin-left: 45px;
    font-family: 'Courgette';
    font-weight: 700;
    line-height: 45px;
-   width: 15%;
    text-align: center;
    font-size: 30px;
 }
@@ -192,13 +196,12 @@ nav .menu {
 
 .auth-box {
    background-color: rgb(255,182,6);
-   margin-left: 20px;
    font-size: 1.1em;
    text-align: center;
 }
 
 .auth-box-true {
-   padding: 15px 30px;
+   padding: 20px 35px;
 }
 
 .auth-box-false {
@@ -277,11 +280,6 @@ nav .menu {
    padding: 40px 10px;
 }
 
-.talents-box__author {
-   background: #EAEBEC;
-   padding: 10px 10px 8px;
-}
-
 .talents-box__avatar {
    font-size: 0;
    border-radius: 50%;
@@ -293,9 +291,17 @@ nav .menu {
    width: 100%;
 }
 
-.talents-box__name {
-   font-weight: 600;
-   font-size: 14px;
+.talents-box__link {
+   background: #ffb606;
+   color: #fff;
+   display: block;
+   text-align: center;
+   padding: 10px 10px 8px;
+}
+
+.talents-box__link:hover {
+   background: #d89902;
+   color: #fff;
 }
 
 .talents-box__name span {
@@ -668,7 +674,7 @@ footer .section-title {
 .contacts-info i {
    font-size: 17px;
    display: inline-block;
-   width: 20px;
+   width: 23px;
    text-align: center;
    color: #ffb606;
 }
@@ -807,7 +813,8 @@ footer .section-title {
 }
 
 .news-box__desc {
-   font-size: 13px;
+   color: inherit;
+   font-size: 14px;
 }
 
 .news-box__more {
