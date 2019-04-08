@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Information
 from django.views.generic import View
 from .models import Specialty
+from django.contrib.auth.models import User
 
 
 def home(request):
@@ -35,4 +36,13 @@ class SpecialtyDetailView(View):
 
 class StaffView(View):
    def get(self, request):
-      return render(request, 'ICTapp/staff.html')
+      user_1 = User.objects.get(id=1)
+      return render(request, 'ICTapp/staff.html', context={
+         'user_1': user_1,
+      })
+
+
+class StaffDetailView(View):
+   def get(self, request, pk):
+      user = get_object_or_404(User, pk=pk)
+      return render(request, 'ICTapp/staff_detail.html', context={'user': user})

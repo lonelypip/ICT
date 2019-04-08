@@ -43,3 +43,14 @@ class Discipline(models.Model):
 
    def __str__(self):
       return self.name
+
+
+
+class Question(models.Model):
+   full_name = models.CharField(max_length=50)
+   email = models.EmailField()
+   phone = models.IntegerField()
+   text = models.TextField()
+
+   def __str__(self):
+      return self.text

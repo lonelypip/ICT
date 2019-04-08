@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %}ICT - {{ user.profile.position }}{% endblock %}
+
+{% block content %}
+   <div class="news-header">
+      <h1>Персонал</h1>
+   </div>
+
+   <section id="teachers-detail" class="teachers-detail">
+      <div class="teachers-detail-ava-box">
+         <div class="teachers-detail-ava__img">
+            <img src="{{ user.profile.img.url }}" alt="ИКТ-учителя">
+         </div>
+      </div>
+      <div class="teachers-detail-info-box">
+         <div class="teachers-detail-info-container">
+            <p class="teachers-detail-info__name">
+               {{ user.first_name }} <span>{{ user.last_name }}</span>
+            </p>
+            <div class="teachers-detail-info__job flex j-sb flex-align-bottom">
+               <p class="teachers-detail-info__job-title">{{ user.profile.position }}</p>
+
+               <div class="teachers-detail-info__links">
+                  <a class="transition" href="#">
+                     <i class="fa fa-pinterest" aria-hidden="true"></i>
+                  </a>
+                  <a class="transition" href="#">
+                     <i class="fa fa-linkedin" aria-hidden="true"></i>
+                  </a>
+                  <a class="transition" href="#">
+                     <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                  <a class="transition" href="#">
+                     <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                  <a class="transition" href="#">
+                     <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                  <p>
+                     {{ user.profile.information }}
+                  </p>
+               </div>
+            </div>
+
+            <div class="teachers-detail-info__personal-info flex j-sb">
+               <div>
+                  <p class="teachers-detail-info__personal-title">Location</p>
+                  <p class="teachers-detail-info__personal-desc">Portland, OR</p>
+               </div>
+
+               <div>
+                  <p class="teachers-detail-info__personal-title">Location</p>
+                  <p class="teachers-detail-info__personal-desc">Portland, OR</p>
+               </div>
+
+               <div>
+                  <p class="teachers-detail-info__personal-title">Location</p>
+                  <p class="teachers-detail-info__personal-desc">Portland, OR</p>
+               </div>
+
+               <div>
+                  <p class="teachers-detail-info__personal-title">Location</p>
+                  <p class="teachers-detail-info__personal-desc">Portland, OR</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+{% endblock content %}

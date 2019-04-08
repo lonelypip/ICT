@@ -13,20 +13,20 @@
          <div class="teachers-box flex j-sb flex-wrap">
             <div class="teachers-box__item">
                <div class="teachers-box__img uk-inline">
-                  <img src="/media/img/teacher_1.jpg" alt="ИКТ-учителя">
+                  <img src="{{ user_1.profile.img.url }}" alt="ИКТ-учителя">
 
-                  <a class="teachers-overlay-link transition" href="#">
+                  <a class="teachers-overlay-link transition" href="{{ user_1.profile.get_absolute_url }}">
                      <div class="uk-overlay-primary uk-position-cover">
                         <div class="uk-position-center">
-                           <p href="#">Подробнее</p>
+                           <p>Подробнее</p>
                         </div>
                      </div>
                   </a>
                </div>
 
                <div class="teachers-box__desc">
-                  <h3 class="text-title teachers-box__name">Maria Smith</h3>
-                  <p class="text-desc teachers-box__job">Graphic Designer</p>
+                  <h3 class="text-title teachers-box__name">{{ user_1.get_full_name }}</h3>
+                  <p class="text-desc teachers-box__job">{{ user_1.profile.position }}</p>
                   
                   <div class="teachers-box__links">
                      <a href="#">
