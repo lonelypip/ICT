@@ -18,7 +18,7 @@
          </div>
          <div style="padding-top: 50px;" class="profile">
             <h2>Изменение Поста</h2>
-            <form method="POST" enctype="multipart/form-data">
+            <form class="post-update" method="POST" enctype="multipart/form-data">
                {% csrf_token %}
                {{ form.as_p }}
                <button class="transition" type="submit">Изменить</button>

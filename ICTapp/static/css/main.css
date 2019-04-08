@@ -786,6 +786,10 @@ footer .section-title {
    font-size: 14px;
 }
 
+.news-box__title {
+   width: 100%;
+}
+
 .news-box__title a {
    color: #1a1a1a;
    font-size: 36px;
@@ -917,7 +921,7 @@ footer .section-title {
 
 .news-detail__comment {
    font-size: 18px;
-   margin: 60px 0;
+   margin: 70px 0 35px;
 }
 
 .news-comment-box__item {
@@ -929,12 +933,12 @@ footer .section-title {
    border-radius: 50%;
    overflow: hidden;
    width: 115px;
-   height: 70px;
+   height: 115px;
 }
 
 .news-comment-box__ava img {
    width: 100%;
-   height: 100%;
+   min-height: 100%;
 }
 
 .news-comment-box__text {
@@ -951,6 +955,14 @@ footer .section-title {
    color: #ffb606;
 }
 
+.add-comment-form label,
+.add-post-form label {
+   display: none !important;
+}
+
+.profile-wrapper .add-post-form p {
+   margin: 0;
+}
 
 .add-comment-form input,
 .add-comment-form textarea,
@@ -970,7 +982,7 @@ footer .section-title {
 }
 
 .add-comment-form textarea:focus,
-.add-comment__field:focus {
+.add-comment-form input:focus {
    outline: 2px solid #ffb606;
 }
 
@@ -998,10 +1010,6 @@ footer .section-title {
            box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
 }
 
-
-
-
-
 /*          PROFILE         */
 
 .profile-wrapper {
@@ -1009,7 +1017,6 @@ footer .section-title {
    width: 80%;
    margin: 0 auto;
    padding: 35px;
-   border: 1px solid silver;
    margin-bottom: 45px;
    margin-top: 45px;
 }
@@ -1055,6 +1062,14 @@ footer .section-title {
    display: block;
    padding-left: 19px;
 }
+
+.post-update textarea {
+   resize: vertical;
+   min-height: 250px;
+   height: 400px;
+}
+
+/* news */
 
 .news-box__container .news-action-button {
    padding: 0 25.7px;

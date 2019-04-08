@@ -46,8 +46,12 @@
 
                   <div class="news-box__title">
                      <div class="flex j-sb">
-                        <a class="text-decor-none">{{ post.title }}</a>
-                        <img class="author-ava" src="{{ post.author.profile.img.url }}">
+                        <div>
+                           <a class="text-decor-none">{{ post.title }}</a>
+                        </div>
+                        <div>
+                           <img class="author-ava" src="{{ post.author.profile.img.url }}">
+                        </div>
                      </div>
                      <p class="news-box__author">Автор: {{ post.author.last_name }} {{ post.author.first_name }}| 3 Comments</p>
                   </div>
@@ -93,19 +97,15 @@
                      </div>
                   {% endfor %}
 
-               <h3 class="text-title news-detail__comment">Добавить комментарий</h3>
-               <div class="add-comment-form transition">
-                  <form method="POST">
-                     {% csrf_token %}
-                     {{ comment_form.as_p }}
-                     <button type="submit">Добавить</button>
-                  </form>
-                  <!-- <form>
-                     <input class="add-comment__field" type="text" placeholder="Name">
-                     <input class="add-comment__field" type="email" placeholder="E-mail">
-                     <textarea class="add-comment__message" placeholder="Message"></textarea>
-                     <button>Send Message</button>
-                  </form> -->
+                  <h3 class="text-title news-detail__comment">Добавить комментарий</h3>
+                  
+                  <div class="add-comment-form transition">
+                     <form method="POST">
+                        {% csrf_token %}
+                        {{ comment_form.as_p }}
+                        <button type="submit">Добавить</button>
+                     </form>
+                  </div>
                </div>
             </div>
          </div>
@@ -154,4 +154,11 @@
       </div>
    </section>
 
+   <script>
+      const input = document.querySelectorAll('.add-comment-form input')[1];
+      const textarea = document.querySelectorAll('.add-comment-form textarea')[0];
+
+      input.placeholder = 'Имя и фамилия';
+      textarea.placeholder = 'Комментаарий';
+   </script>
 {% endblock content %}
