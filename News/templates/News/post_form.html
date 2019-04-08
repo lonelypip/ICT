@@ -1,28 +1,29 @@
 {% extends 'base.html' %}
-{% block title %}Добавление статьи{% endblock title %}
+{% block title %}ICT - Добавление статьи{% endblock title %}
 
 {% block content %}
    <div class="news-header" style="background: url('/media/img/news_background.jpg');">      
-      <h1>Add Post</h1>
+      <h1>Добавление статьи</h1>
    </div>
    <div class="wrapper">
-      <div>
-         {% if messages %}
-            {% for mess in messages %}
-               <div>
-                  {{ mess }}
-               </div>
-            {% endfor %}
-         {% endif %}
-
-      </div>
-      <div style="padding-top: 50px;">
-         <h2>Добавление новой статьи</h2>
-         <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Добавить</button>
-         </form>
+      <div class="profile-wrapper">
+         <div class="profile">
+            {% if messages %}
+               {% for mess in messages %}
+                  <div>
+                     {{ mess }}
+                  </div>
+               {% endfor %}
+            {% endif %}
+         </div>
+         <div style="padding-top: 50px;" class="profile">
+            <h2>Добавление Поста</h2>
+            <form method="POST" enctype="multipart/form-data">
+               {% csrf_token %}
+               {{ form.as_p }}
+               <button class="transition" type="submit">Добавить</button>
+            </form>
+         </div>
       </div>
    </div>
 {% endblock content %}

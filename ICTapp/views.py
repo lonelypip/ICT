@@ -22,7 +22,7 @@ class InformationDetailView(View):
 class SpecialtyView(View):
    def get(self, request):
       specialty = Specialty.objects.all()
-      return render(request, 'ICTapp/Specialty.html', context={
+      return render(request, 'ICTapp/specialty.html', context={
          'specialty': specialty,
       })
 

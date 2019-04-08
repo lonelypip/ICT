@@ -15,3 +15,18 @@ class Post(models.Model):
    
    def get_absolute_url(self):
       return reverse('news_detail_url', kwargs={'pk':self.pk})
+
+
+
+class Comment(models.Model):
+   post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments' )
+   full_name = models.CharField(max_length=50)
+   img = models.ImageField(default='default.jpg', upload_to='user_images')
+   text = models.TextField()
+   date = models.DateTimeField(default=timezone.now)
+   approved = models.BooleanField(default=False)
+
+   def __str__(self):
+      return self.text
+   
+  

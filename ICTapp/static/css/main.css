@@ -875,6 +875,21 @@ footer .section-title {
    color: #1a1a1a;
 }
 
+/* ------------------------------- ADD POST ----------------------------------*/
+
+#id_title,
+#id_text {
+   width: 100%;
+   display: block;
+   background: #F8F4F4;
+   border: none;
+   padding: 12px 25px;
+   font-weight: 600;
+}
+
+
+
+
 /* ------------------------------ News Detail ------------------------------ */
 
 .news-detail__quote {
@@ -936,9 +951,8 @@ footer .section-title {
    color: #ffb606;
 }
 
-.add-comment__field,
-#id_username,
-#id_email,
+
+.add-comment-form input,
 .add-comment-form textarea,
 .add-comment-form button {
    width: 100%;
@@ -949,8 +963,7 @@ footer .section-title {
    font-weight: 600;
 }
 
-.add-comment__field,
-#id_email,
+.add-comment-form input,
 .add-comment-form textarea,
 .add-comment-form button {
    margin-bottom: 17px;;
@@ -984,6 +997,12 @@ footer .section-title {
    -webkit-box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
            box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
 }
+
+
+
+
+
+/*          PROFILE         */
 
 .profile-wrapper {
    display: block;

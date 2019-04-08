@@ -9,6 +9,13 @@
    <section id="news-section" class="news-section section">
       <div class="wrapper news-wrap flex j-sb">
          <div class="news-box">
+            {% if messages %}
+               {% for mess in messages %}
+                  <div>
+                     {{ mess }}
+                  </div>
+               {% endfor %}
+            {% endif %}
             <div class="news-box__item">
                {% if post.img %}
                   <div class="news-box__img">
@@ -67,53 +74,38 @@
                   In sed odio rhoncus, tristique ipsum id, pharetra neque.
                </p> -->
 
-               <h3 class="text-title news-detail__comment">Comments</h3>
+               <h3 class="text-title news-detail__comment">Комментарий</h3>
 
                <div class="news-comment-box">
-                  <div class="news-comment-box__item flex flex-align-center">
-                     <div class="news-comment-box__ava">
-                        <img src="/media/img/comment_1.jpg" alt="">
+                  {% for comment in comments %}
+                     <div class="news-comment-box__item flex flex-align-center">
+                        <div class="news-comment-box__ava">
+                           <img src="{{ comment.img.url }}" alt="">
+                        </div>
+
+                        <div>
+                           <p class="news-comment-box__author">{{ comment.full_name }} | {{ comment.date|date:"M d, Y "}} | <span>Reply</span></p>
+
+                           <p class="text-desc news-comment-box__text">
+                              {{ comment.text }}
+                           </p>
+                        </div>
                      </div>
+                  {% endfor %}
 
-                     <div>
-                        <p class="news-comment-box__author">Mark Smith | Dec 18, 2017 | <span>Reply</span></p>
-
-                        <p class="text-desc news-comment-box__text">
-                           Aliquam rhoncus, purus in vehicula porttitor, 
-                           lacus ante consequat purus, id elementum enim 
-                           purus nec enim. In sed odio rhoncus, tristique 
-                           ipsum id, pharetra neque.
-                        </p>
-                     </div>
-                  </div>
-
-                  <div class="news-comment-box__item flex flex-align-center">
-                     <div class="news-comment-box__ava">
-                        <img src="/media/img/comment_2.jpg" alt="">
-                     </div>
-
-                     <div>
-                        <p class="news-comment-box__author">Mark Smith | Dec 18, 2017 | <span>Reply</span></p>
-
-                        <p class="text-desc news-comment-box__text">
-                           Aliquam rhoncus, purus in vehicula porttitor, 
-                           lacus ante consequat purus, id elementum enim 
-                           purus nec enim. In sed odio rhoncus, tristique 
-                           ipsum id, pharetra neque.
-                        </p>
-                     </div>
-                  </div>
-               </div>
-
-               <h3 class="text-title news-detail__comment">Leave a comment</h3>
-
+               <h3 class="text-title news-detail__comment">Добавить комментарий</h3>
                <div class="add-comment-form transition">
-                  <form>
+                  <form method="POST">
+                     {% csrf_token %}
+                     {{ comment_form.as_p }}
+                     <button type="submit">Добавить</button>
+                  </form>
+                  <!-- <form>
                      <input class="add-comment__field" type="text" placeholder="Name">
                      <input class="add-comment__field" type="email" placeholder="E-mail">
                      <textarea class="add-comment__message" placeholder="Message"></textarea>
                      <button>Send Message</button>
-                  </form>
+                  </form> -->
                </div>
             </div>
          </div>

@@ -1,6 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from .models import Post
+from .models import Post, Comment
+from .forms import CommentForm
+from django.contrib import messages
 from django.views.generic import (
    View,
    ListView, 
@@ -36,19 +38,24 @@ class ShowNewsView(ListView):
 class NewsDetailView(View):
    def get(self, request, pk):
       post = get_object_or_404(Post, pk=pk)
-      # comments = Comment.objects.filter(post=post).order_by('-id')
-      # form = CommentForm()
-      return render(request, 'News/news_detail.html', context={'post': post})
-   # def post(self, request, pk):
-   #    post = get_object_or_404(News, pk=pk)
-   #    bound_form = CommentForm(request.POST)
-   #    if bound_form.is_valid():
-   #       text = request.POST.get('text')
-   #       comment = Comment.objects.create(post=post, author=request.user, text=text)
-   #       comment.save()
-   #       messages.success(request, f'Ваш комментарий успешно добавлен')
-   #       return redirect(post)
-   #    return redirect(post)
+      comments = Comment.objects.filter(post=post, approved=True).order_by('-date')
+      comment_form = CommentForm()
+      return render(request, 'News/news_detail.html', context={
+         'post': post,
+         'comments': comments,
+         'comment_form': comment_form,
+      })
+   def post(self, request, pk):
+      post = get_object_or_404(Post, pk=pk)
+      bound_form = CommentForm(request.POST)
+      if bound_form.is_valid():
+         text = request.POST.get('text')
+         full_name = request.POST.get('full_name')
+         comment = Comment.objects.create(post=post, full_name=full_name, text=text)
+         comment.save()
+         messages.success(request, f'Ваш комментарий в рассмотрений')
+         return redirect(post)
+      return redirect(post)
 
 
 class CreateNewsView(LoginRequiredMixin, CreateView):

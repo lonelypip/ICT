@@ -1,28 +1,29 @@
 {% extends 'base.html' %}
-{% block title %}Добавление статьи{% endblock title %}
+{% block title %}ICT - Удаление статьи{% endblock title %}
 
 {% block content %}
    <div class="news-header" style="background: url('/media/img/news_background.jpg');">      
-      <h1>Delete Post</h1>
+      <h1>Удаление статьи</h1>
    </div>
    <div class="wrapper">
-      <div>
-         {% if messages %}
-            {% for mess in messages %}
-               <div>
-                  {{ mess }}
-               </div>
-            {% endfor %}
-         {% endif %}
-
-      </div>
-      <div style="padding-top: 50px;">
-         <h2>Вы точно хотите удалить статью "{{ object.title }}"?</h2>
-         <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <button type="submit">Удалить</button>
-            <a href="{{ object.get_absolute_url }}">Отмена</a>
-         </form>
+      <div class="profile-wrapper">
+         <div class="profile">
+            {% if messages %}
+               {% for mess in messages %}
+                  <div>
+                     {{ mess }}
+                  </div>
+               {% endfor %}
+            {% endif %}
+         </div>
+         <div style="padding-top: 50px;" class="profile">
+            <h2>Вы точно хотите удалить статью "{{ object.title }}"?</h2>
+            <form method="POST" enctype="multipart/form-data">
+               {% csrf_token %}
+               <button class="transition" type="submit">Удалить</button>
+               <a href="{{ object.get_absolute_url }}">Отмена</a>
+            </form>
+         </div>
       </div>
    </div>
 {% endblock content %}
