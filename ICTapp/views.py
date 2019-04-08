@@ -3,10 +3,14 @@ from .models import Information
 from django.views.generic import View
 from .models import Specialty
 from django.contrib.auth.models import User
+from News.models import Post
 
 
 def home(request):
-   return render(request, 'ICTapp/index.html')
+   posts = Post.objects.filter().order_by('-date')[:7]
+   return render(request, 'ICTapp/index.html', context={
+      'posts': posts,
+   })
 
 
 def informations(request):
@@ -17,7 +21,6 @@ class InformationDetailView(View):
    def get(self, request, pk):
       information = get_object_or_404(Information, pk=pk)
       return render(request, 'ICTapp/information_detail.html', context={'information': information})
-
 
 
 class SpecialtyView(View):

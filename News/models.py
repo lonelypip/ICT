@@ -16,6 +16,9 @@ class Post(models.Model):
    def get_absolute_url(self):
       return reverse('news_detail_url', kwargs={'pk':self.pk})
 
+   def get_comment_count(self):
+      return self.comments.all().filter(approved=True).count()
+
 
 
 class Comment(models.Model):
@@ -28,5 +31,6 @@ class Comment(models.Model):
 
    def __str__(self):
       return self.text
+
    
   

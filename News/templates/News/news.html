@@ -48,7 +48,7 @@
                            <a class="text-decor-none" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                            <img class="author-ava" src="{{ post.author.profile.img.url }}">
                         </div>
-                        <p class="news-box__author">Автор: {{ post.author.last_name }} {{ post.author.first_name }}| 3 Comments</p>
+                        <p class="news-box__author">Автор: {{ post.author.last_name }} {{ post.author.first_name }}| {{ post.get_comment_count }} Комментариев</p>
                      </div>
                   </div>
 

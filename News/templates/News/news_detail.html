@@ -53,7 +53,7 @@
                            <img class="author-ava" src="{{ post.author.profile.img.url }}">
                         </div>
                      </div>
-                     <p class="news-box__author">Автор: {{ post.author.last_name }} {{ post.author.first_name }}| 3 Comments</p>
+                     <p class="news-box__author">Автор: {{ post.author.last_name }} {{ post.author.first_name }}| {{ post.get_comment_count }} Комментариев</p>
                   </div>
                </div>
 

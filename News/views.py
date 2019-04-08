@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse_lazy
 from django.http import HttpResponse
 from .models import Post, Comment
 from .forms import CommentForm
@@ -85,7 +86,7 @@ class UpdateNewsView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 class DeleteNewsView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
    model = Post
-   success_url = '/'
+   success_url = reverse_lazy('news_url')
 
    def form_valid(self, form):
       form.instance.author = self.request.user

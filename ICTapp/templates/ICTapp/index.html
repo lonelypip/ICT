@@ -276,56 +276,18 @@
 
          <div class="news-slider-box uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="clsActivated: uk-transition-active; center: true; autoplay: true; autoplay-interval: 4000">
             <ul class="uk-slider-items uk-grid">
-               <li class="uk-width-1-2">
-                  <div class="uk-panel">
-                     <img src="https://getuikit.com/docs/images/light.jpg" alt="ИКТ-новости">
-                     <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
-                        <h3 class="uk-margin-remove">Сенсация</h3>
-                        <p class="uk-margin-remove">Все будет, но не сразу - цитата работает, просто ждите</p>
-                        <a class="text-decor-none slider-btn transition" href="#">Подробнее</a>
+               {% for post in posts %}
+                  <li class="uk-width-1-2">
+                     <div class="uk-panel">
+                        <img src="{{ post.img.url }}" alt="ИКТ-новости">
+                        <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                           <h3 class="uk-margin-remove">{{ post.title }}</h3>
+                           <p class="uk-margin-remove">{{ post.text|truncatechars:30 }}</p>
+                           <a class="text-decor-none slider-btn transition" href="{{ post.get_absolute_url }}">Подробнее</a>
+                        </div>
                      </div>
-                  </div>
-               </li>
-               <li class="uk-width-1-2">
-                  <div class="uk-panel">
-                     <img src="https://getuikit.com/docs/images/photo2.jpg" alt="ИКТ-новости">
-                     <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
-                        <h3 class="uk-margin-remove">Сенсация</h3>
-                        <p class="uk-margin-remove">Все будет, но не сразу - цитата работает, просто ждите</p>
-                        <a class="text-decor-none slider-btn transition" href="#">Подробнее</a>
-                     </div>
-                  </div>
-               </li>
-               <li class="uk-width-1-2">
-                  <div class="uk-panel">
-                     <img src="https://getuikit.com/docs/images/photo3.jpg" alt="ИКТ-новости">
-                     <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
-                        <h3 class="uk-margin-remove">Сенсация</h3>
-                        <p class="uk-margin-remove">Все будет, но не сразу - цитата работает, просто ждите</p>
-                        <a class="text-decor-none slider-btn transition" href="#">Подробнее</a>
-                     </div>
-                  </div>
-               </li>
-               <li class="uk-width-1-2">
-                  <div class="uk-panel">
-                     <img src="https://getuikit.com/docs/images/photo.jpg" alt="ИКТ-новости">
-                     <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
-                        <h3 class="uk-margin-remove">Сенсация</h3>
-                        <p class="uk-margin-remove">Все будет, но не сразу - цитата работает, просто ждите</p>
-                        <a class="text-decor-none slider-btn transition" href="#">Подробнее</a>
-                     </div>
-                  </div>
-               </li>
-               <li class="uk-width-1-2">
-                  <div class="uk-panel">
-                     <img src="https://getuikit.com/docs/images/dark.jpg" alt="">
-                     <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
-                        <h3 class="uk-margin-remove">Сенсация</h3>
-                        <p class="uk-margin-remove">Все будет, но не сразу - цитата работает, просто ждите</p>
-                        <a class="text-decor-none slider-btn transition" href="#">Подробнее</a>
-                     </div>
-                  </div>
-               </li>
+                  </li>
+               {% endfor %}
             </ul>
             
             <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
