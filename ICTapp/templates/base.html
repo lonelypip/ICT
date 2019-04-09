@@ -61,12 +61,15 @@
          <h2 class="section-title">Subscribe to newsletter</h2>
 
          <div class="subscribe">
-            <!-- <input type="text" placeholder="Email Address">
-            <input type="text" placeholder="Email Address">
-            <input type="text" placeholder="Email Address">
-            <input type="text" placeholder="Email Address"> -->
-            {{ question_form }}
-            <button>Subscribe</button>
+            <form method="POST">
+               {% csrf_token %}
+               <!-- <input type="text" placeholder="Email Address">
+               <input type="text" placeholder="Email Address">
+               <input type="text" placeholder="Email Address">
+               <input type="text" placeholder="Email Address"> -->
+               {{ question_form.as_p }}
+               <button type="submit">Subscribe</button>
+            </form>
          </div>
 
          <div class="footer-box flex j-sb">
