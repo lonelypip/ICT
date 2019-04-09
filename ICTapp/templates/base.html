@@ -58,7 +58,14 @@
    {% endblock content %}
    <footer id="footer">
       <div class="wrapper">
-         <h2 class="section-title">Subscribe to newsletter</h2>
+         {% if messages %}
+            {% for mess in messages %}
+               <div>
+                  {{ mess }}
+               </div>
+            {% endfor %}
+         {% endif %}
+         <h2 class="section-title">Задайте вопрос</h2>
 
          <div class="subscribe">
             <form method="POST">

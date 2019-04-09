@@ -569,6 +569,10 @@ nav .menu {
    margin-top: 50px;
 }
 
+.news-slider-box img {
+   width: 100%;
+}
+
 .slider-btn {
    background: #ffb606;
    text-decoration: none;
